@@ -1,0 +1,12 @@
+<div class="wrapperNavigation {{ disable ? 'show' : 'hide' }}">
+  <i (click)="scrollToTop()" class="fa-regular fa-circle-up navUp"></i>
+  <div class="navigationElements">
+    @for (items of navigation; track items.name) {
+      <li>
+        <a href="#{{ items.url }}">{{ items.name }}</a>
+        <div class="navCircle"></div>
+      </li>
+    }
+  </div>
+  <i (click)="scrollToTop()" class="fa-regular fa-circle-up navUp"></i>
+</div>
