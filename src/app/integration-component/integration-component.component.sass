@@ -13,6 +13,7 @@ $sizeContact: 4.5rem
   box-shadow: 0 0 1rem 1rem $mainColor-dark
   cursor: pointer
   transition: all .2s ease-in-out
+  z-index: 1000
 
   & > i
     font-size: calc($sizeContact - 2rem)
@@ -28,13 +29,14 @@ $sizeContact: 4.5rem
 
 .socialElement
   position: fixed
-  right: 10%
+  right: 2rem
   display: flex
+  z-index: 1000
 
 
 .socialItem
   width: $sizeContact
-  height: calc($sizeContact * 2)
+  height: calc($sizeContact * 1.8)
   border-radius: 0 0 2rem 2rem
   background-color: $secondColor
   border: none
@@ -43,6 +45,7 @@ $sizeContact: 4.5rem
   box-shadow: 0 0 1rem 1rem $mainColor-dark
   cursor: pointer
   transition: all .2s ease-in-out
+
 
   & > i
     font-size: calc($sizeContact - 2rem)
@@ -55,7 +58,9 @@ $sizeContact: 4.5rem
   &:hover
     height: calc($sizeContact * 2.2)
   &:active
-    height: calc($sizeContact * 1.8)
+    height: calc($sizeContact * 1.6)
 
 
-
+.logo
+  color: $textColor
+  font-size: 8rem

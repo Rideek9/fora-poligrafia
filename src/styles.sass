@@ -43,6 +43,29 @@ body::before
   grid-column: 2 / -2
 
 
+.buttonElement
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 8em
+  height: 4rem
+  background-color: $secondColor
+  border-radius: 3rem
+  margin: 2rem auto
+  font-size: 2rem
+  text-decoration: none
+  font-weight: 600
+  color: $mainColor
+  box-shadow: 0 0 1rem 1rem $mainColor-dark
+  transition: all .2s ease-in-out
+
+  &:hover
+    transform: scale(1.1)
+
+  &:active
+    transform: scale(.95)
+
+
 
 
 
