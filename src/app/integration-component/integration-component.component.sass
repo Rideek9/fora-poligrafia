@@ -1,0 +1,61 @@
+@import 'variables'
+
+$sizeContact: 4.5rem
+
+.buttonContact
+  width: $sizeContact
+  height: $sizeContact
+  border-radius: 50%
+  background-color: $secondColor
+  border: none
+  position: fixed
+  top: 2rem
+  box-shadow: 0 0 1rem 1rem $mainColor-dark
+  cursor: pointer
+  transition: all .2s ease-in-out
+
+  & > i
+    font-size: calc($sizeContact - 2rem)
+    color: $mainColor
+
+  &:hover
+    transform: scale(1.1)
+
+
+  &:active
+    transform: scale(.95)
+
+
+.socialElement
+  position: fixed
+  right: 10%
+  display: flex
+
+
+.socialItem
+  width: $sizeContact
+  height: calc($sizeContact * 2)
+  border-radius: 0 0 2rem 2rem
+  background-color: $secondColor
+  border: none
+  margin: 0 .5rem
+  position: relative
+  box-shadow: 0 0 1rem 1rem $mainColor-dark
+  cursor: pointer
+  transition: all .2s ease-in-out
+
+  & > i
+    font-size: calc($sizeContact - 2rem)
+    position: absolute
+    bottom: 1rem
+    left: 50%
+    transform: translateX(-50%)
+    color: $mainColor
+
+  &:hover
+    height: calc($sizeContact * 2.2)
+  &:active
+    height: calc($sizeContact * 1.8)
+
+
+
