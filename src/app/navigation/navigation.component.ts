@@ -79,4 +79,22 @@ export class NavigationComponent implements OnInit {
       behavior: 'smooth',
     });
   };
+
+  scrollToElement(elementId: string) {
+    const element = document.getElementById(elementId);
+    window.location.hash = `#${elementId}`;
+
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top; // Pozycja elementu względem okna przeglądarki
+      const offsetPosition =
+        elementPosition +
+        window.pageYOffset -
+        (window.innerHeight / 2 - element.clientHeight / 2); // Środek ekranu z uwzględnieniem wysokości elementu
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth', // Płynne przewijanie
+      });
+    }
+  }
 }

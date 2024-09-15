@@ -3,7 +3,7 @@
   <div class="navigationElements">
     @for (items of navigation; track items.name) {
       <li>
-        <a href="#{{ items.url }}">{{ items.name }}</a>
+        <a (click)="scrollToElement(items.url)">{{ items.name }}</a>
         <div
           class="navCircle {{
             urladdress.slice(2) === items.url ? 'activeURL' : ''
