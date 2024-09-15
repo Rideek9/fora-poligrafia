@@ -9,6 +9,7 @@
 .wrapperNavigation
   width: 60%
   height: 4rem
+  //background-image: linear-gradient(rgba($secondColor,.7),rgba($secondColor,.7))
   background-color: $secondColor
   border-radius: 4rem
   position: fixed
@@ -26,3 +27,38 @@
   font-size: 3rem
   color: $mainColor
   cursor: pointer
+
+
+
+.navigationElements
+  display: flex
+  width: 80%
+  justify-content: space-around
+
+  & > li
+    display: flex
+    list-style: none
+    justify-content: center
+    align-items: center
+
+    & > a
+      text-decoration: none
+      font-size: 2rem
+      padding: 0 1rem
+      color: $mainColor
+
+      &:active, &:hover
+        font-weight: 600
+
+      &:active
+        transform: scale(.95)
+
+    .navCircle
+      width: 1.2rem
+      height: 1.2rem
+      border-radius: 50%
+      background-color: $secondColor-dark
+      transition: all .2s ease-in-out
+
+    & .activeURL
+      background-color: $mainColor

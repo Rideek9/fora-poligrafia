@@ -4,7 +4,11 @@
     @for (items of navigation; track items.name) {
       <li>
         <a href="#{{ items.url }}">{{ items.name }}</a>
-        <div class="navCircle"></div>
+        <div
+          class="navCircle {{
+            urladdress.slice(2) === items.url ? 'activeURL' : ''
+          }}"
+        ></div>
       </li>
     }
   </div>

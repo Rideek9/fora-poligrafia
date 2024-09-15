@@ -1,13 +1,21 @@
 import { Component, HostListener } from '@angular/core';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [],
+  imports: [RouterLinkActive, RouterLink],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.sass',
 })
 export class NavigationComponent {
+  // data navigation
   navigation = [
     {
       name: 'o nas',
@@ -15,15 +23,41 @@ export class NavigationComponent {
       active: true,
     },
     {
+      name: 'specjalności',
+      active: true,
+      url: 'expirence',
+    },
+    {
       name: 'zaufali nam',
-      url: 'trustUs',
+      url: 'trust-us',
       active: true,
     },
   ];
 
+  // open navigation section
   disable = false;
 
   numberF = 0;
+
+  //location UIRL
+
+  urladdress = '';
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events
+      .pipe(
+        // Filtrujemy, aby reagować tylko na zakończoną nawigację
+        filter((event) => event instanceof NavigationEnd),
+      )
+      // @ts-ignore
+      .subscribe((event: NavigationEnd) => {
+        // Ustawiamy bieżący URL
+        this.urladdress = event.urlAfterRedirects;
+      });
+  }
+
+  //scroling to up
 
   @HostListener('window:scroll', [])
   onWindowScroll = () => {
