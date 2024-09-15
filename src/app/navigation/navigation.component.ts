@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import {
   NavigationEnd,
   Router,
@@ -14,7 +14,7 @@ import { filter } from 'rxjs';
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.sass',
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
   // data navigation
   navigation = [
     {
@@ -66,7 +66,6 @@ export class NavigationComponent {
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0;
-    console.log(this.disable);
     if (this.numberF >= 100) {
       this.disable = true;
     } else {

@@ -1,0 +1,62 @@
+@import "variables"
+
+.wrapperAboutUs
+  width: 80%
+  margin: $marginSection auto
+  display: flex
+  flex-direction: column
+  gap: 8rem
+  justify-content: center
+  align-items: center
+
+
+.elementsAboutUs
+  display: flex
+  align-items: center
+  justify-content: center
+
+
+  & > .itemAboutUs
+    width: 7rem
+    height: 10rem
+    margin: 0 3rem
+    background-color: $textColor
+    border-radius: 2rem
+    color: $mainColor
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: skewY(-8deg)
+    transition: all .2s ease-in-out
+    cursor: pointer
+
+    & > p
+      transform: skewY(8deg)
+
+    &:hover
+      transform: scale(1.7) skewY(-8deg)
+      background-color: $secondColor
+    &:active
+      transform: scale(1.5) skewY(-8deg)
+      background-color: $secondColor
+
+
+  & .activeItemAboutUs
+      background-color: $secondColor
+      transform: scale(1.7) skewY(-8deg)
+      box-shadow: 0 0 2rem .5em rgba($secondColor-dark,.4)
+
+
+
+.descriptionAboutUs
+  width: 80%
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+  & > p
+    font-size: 1.8rem
+    text-align: justify
+    letter-spacing: 2px
+    line-height: 4rem
