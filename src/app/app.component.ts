@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IntegrationComponentComponent } from './integration-component/integration-component.component';
-import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { IntegrationComponentComponent } from './components/integration-component/integration-component.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { PhotoComponent } from './components/photo/photo.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HeaderComponent,
     NavigationComponent,
     AboutUsComponent,
+    PhotoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',

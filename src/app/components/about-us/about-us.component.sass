@@ -5,16 +5,16 @@
   margin: $marginSection auto
   display: flex
   flex-direction: column
-  gap: 8rem
   justify-content: center
   align-items: center
-
+  gap: 3rem
 
 
 .elementsAboutUs
   display: flex
   align-items: center
   justify-content: center
+
 
 
   & > .itemAboutUs
@@ -31,8 +31,9 @@
     transition: all .2s ease-in-out
     cursor: pointer
 
-    & > p
+    & > i
       transform: skewY(8deg)
+      font-size: 3rem
 
     &:hover
       transform: scale(1.7) skewY(-8deg)
@@ -51,9 +52,13 @@
 
 .descriptionAboutUs
   width: 80%
+  min-height: 30rem
   display: flex
-  justify-content: center
+  flex-direction: column
+  justify-content: start
   align-items: center
+  margin-top: 2rem
+
 
 
   & > p
@@ -61,3 +66,14 @@
     text-align: justify
     letter-spacing: 2px
     line-height: 4rem
+
+
+  & > .informationHeader
+    font-size: 2.5rem
+    text-transform: uppercase
+    padding: 2rem 0
+    letter-spacing: 2px
+    font-weight: 600
+
+
+

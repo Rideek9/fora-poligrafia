@@ -78,6 +78,7 @@ export class NavigationComponent implements OnInit {
       top: 0,
       behavior: 'smooth',
     });
+    window.location.hash = '';
   };
 
   scrollToElement(elementId: string) {

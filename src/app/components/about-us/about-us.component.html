@@ -1,0 +1,27 @@
+<div class="wrapperAboutUs" id="about">
+  <div class="elementsAboutUs">
+    @for (items of sortInformation; track items.name) {
+      @if (items.active) {
+        <div
+          (click)="Activated(items.name)"
+          class=" itemAboutUs {{
+            elementActive === items.name ? 'activeItemAboutUs' : ''
+          }}"
+        >
+          <i [class]="items.icon"></i>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="descriptionAboutUs">
+    @for (items of sortInformation; track items.name) {
+      @if (items.name === elementActive) {
+        <span [hidden]="!items.active" class="informationHeader">{{
+          items.name
+        }}</span>
+        <p [hidden]="!items.active">{{ items.description }}</p>
+      }
+    }
+  </div>
+</div>

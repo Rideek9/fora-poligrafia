@@ -1,0 +1,12 @@
+<div class="wrapperPhoto">
+  @for (image of dataImage; track image.alt) {
+    <div
+      style="background-image: url({{ image.url }})"
+      class="{{ image.center ? 'centerImage' : '' }}"
+    >
+      <div class="descriptionPhoto">
+        <span class="descriptionPhoto__name">{{ image.alt }}</span>
+      </div>
+    </div>
+  }
+</div>
