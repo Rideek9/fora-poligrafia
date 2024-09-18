@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { PhotoComponent } from './components/photo/photo.component';
+import { SpecialtiesComponent } from './components/specialties/specialties.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { PhotoComponent } from './components/photo/photo.component';
     NavigationComponent,
     AboutUsComponent,
     PhotoComponent,
+    SpecialtiesComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',

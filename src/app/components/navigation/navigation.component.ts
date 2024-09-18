@@ -90,7 +90,8 @@ export class NavigationComponent implements OnInit {
       const offsetPosition =
         elementPosition +
         window.pageYOffset -
-        (window.innerHeight / 2 - element.clientHeight / 2); // Środek ekranu z uwzględnieniem wysokości elementu
+        (window.innerHeight / 3 - element.clientHeight / 3); // Środek ekranu z
+      // uwzględnieniem wysokości elementu
 
       window.scrollTo({
         top: offsetPosition,
