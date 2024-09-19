@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationComponent } from '../../elements/navigation/navigation.component';
+import { SpecContentComponent } from '../../elements/spec-content/spec-content.component';
+import { data } from '../../../../public/datas/specData';
 
 @Component({
   selector: 'app-specialties',
   standalone: true,
-  imports: [NavigationComponent],
+  imports: [NavigationComponent, SpecContentComponent],
   templateUrl: './specialties.component.html',
   styleUrl: './specialties.component.sass',
 })
-export class SpecialtiesComponent {
+export class SpecialtiesComponent implements OnInit {
   activeElement = 'znakowanie';
 
   navigationSpecialties = [
@@ -26,8 +28,19 @@ export class SpecialtiesComponent {
     },
   ];
 
+  contentSpecjalist: any;
+
+  ngOnInit(): void {
+    this.contentSpecjalist = data.filter((spec) => {
+      return spec.specialization === this.activeElement;
+    });
+  }
+
   //change activeElement emiter
-  changeElement(data: string) {
-    this.activeElement = data;
+  changeElement(item: string) {
+    this.activeElement = item;
+    this.contentSpecjalist = data.filter((spec) => {
+      return spec.specialization === this.activeElement;
+    });
   }
 }

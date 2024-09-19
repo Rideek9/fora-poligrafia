@@ -15,12 +15,19 @@
     letter-spacing: 2px
     text-transform: uppercase
     cursor: pointer
+    transition: all .2s ease-in-out
 
     &:hover
       color: $secondColor
+      transform: scale(1.2)
+
+    &:active
+      transform: scale(.95)
+
 
 
 .activeItem
   color: $secondColor
+  transform: scale(1.2)
 
 

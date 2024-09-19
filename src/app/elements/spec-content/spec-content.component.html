@@ -1,0 +1,17 @@
+<div class="contentWrapper">
+  @for (item of data; track $index) {
+    <div class="contentElement">
+      <p class="contentDescription">
+        {{ item.description }}
+      </p>
+      <div
+        class="contentPhoto"
+        style="background-image: url({{ item.photoUrl }})"
+      >
+        <p>
+          {{ item.name }}
+        </p>
+      </div>
+    </div>
+  }
+</div>
