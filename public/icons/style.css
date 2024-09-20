@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?xsvkzc');
-  src:  url('fonts/icomoon.eot?xsvkzc#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?xsvkzc') format('truetype'),
-    url('fonts/icomoon.woff?xsvkzc') format('woff'),
-    url('fonts/icomoon.svg?xsvkzc#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?rpubx2');
+  src:  url('fonts/icomoon.eot?rpubx2#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?rpubx2') format('truetype'),
+    url('fonts/icomoon.woff?rpubx2') format('woff'),
+    url('fonts/icomoon.svg?rpubx2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-Smilemasters-logo:before {
+  content: "\e901";
+}
+.icon-mediq-logo:before {
+  content: "\e902";
+}
+.icon-Alcorn-Logo:before {
+  content: "\e903";
+}
+.icon-hair-beauty-logo:before {
+  content: "\e904";
+}
 .icon-ForaLogo:before {
   content: "\e900";
 }

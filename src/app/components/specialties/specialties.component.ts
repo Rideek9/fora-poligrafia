@@ -2,11 +2,12 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationComponent } from '../../elements/navigation/navigation.component';
 import { SpecContentComponent } from '../../elements/spec-content/spec-content.component';
 import { data } from '../../../../public/datas/specData';
+import { ButtonActionComponent } from '../../elements/button-action/button-action.component';
 
 @Component({
   selector: 'app-specialties',
   standalone: true,
-  imports: [NavigationComponent, SpecContentComponent],
+  imports: [NavigationComponent, SpecContentComponent, ButtonActionComponent],
   templateUrl: './specialties.component.html',
   styleUrl: './specialties.component.sass',
 })

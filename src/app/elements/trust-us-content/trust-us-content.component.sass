@@ -1,0 +1,89 @@
+@import 'variables'
+
+$iconSize: 3.5rem
+$iconBigScale: 1.6
+$iconHoverScale: 1.2
+$sizeChoseComment: 1.3rem
+
+.logoTrustUs
+  display: flex
+  gap: calc($iconSize * 2)
+  padding: 3rem 0
+  justify-content: center
+  transform: scaleX(.5)
+
+
+.descriptionTrusUs
+  width: 80%
+  display: grid
+  margin: 0 auto
+  grid-template-columns: .3fr auto
+  padding: 3rem 0
+  transform: scaleX(.5)
+  gap: 2rem
+
+
+  & > p
+    font-size: 1.8rem
+    letter-spacing: 2px
+    line-height: 3rem
+
+  & > .avatarIcon
+    width: 8rem
+    height: 8rem
+    background-color: $mainColor
+    border-radius: 50%
+    margin: 0 0 0 auto
+    background-size: cover
+
+
+
+.IconTrust
+  font-size: $iconSize
+  color: lighten($mainColor, 20)
+  transition: all .4s ease-in-out
+  cursor: pointer
+
+
+  &:hover
+    color: $secondColor
+    transform: scale($iconHoverScale)
+
+.bigIcon
+  transform: scale($iconBigScale)
+
+
+  &:hover
+    color: $secondColor
+    transform: scale($iconBigScale * $iconHoverScale)
+
+
+.activeTrust
+  color: $secondColor
+
+
+.wrapperButton
+  transform: scaleX(.5)
+  width: 100%
+  display: flex
+  justify-content: end
+  padding: 2rem 0
+
+
+.sizeComments
+  transform: scaleX(.5)
+  width: 100%
+  display: flex
+  justify-content: center
+  gap: 1rem
+
+
+.numberOfComment
+  width: $sizeChoseComment
+  height: $sizeChoseComment
+  background-color:  lighten($mainColor,15)
+  border-radius: 50%
+  cursor: pointer
+
+.activeNumberComment
+  background-color: $secondColor
