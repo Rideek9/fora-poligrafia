@@ -5,12 +5,13 @@ $iconBigScale: 1.6
 $iconHoverScale: 1.2
 $sizeChoseComment: 1.3rem
 
+
 .logoTrustUs
   display: flex
   gap: calc($iconSize * 2)
   padding: 3rem 0
   justify-content: center
-  transform: scaleX(.5)
+  transform: scaleX($scaleContent)
 
 
 .descriptionTrusUs
@@ -19,7 +20,7 @@ $sizeChoseComment: 1.3rem
   margin: 0 auto
   grid-template-columns: .3fr auto
   padding: 3rem 0
-  transform: scaleX(.5)
+  transform: scaleX($scaleContent)
   gap: 2rem
 
 
@@ -63,7 +64,7 @@ $sizeChoseComment: 1.3rem
 
 
 .wrapperButton
-  transform: scaleX(.5)
+  transform: scaleX($scaleContent)
   width: 100%
   display: flex
   justify-content: end
@@ -71,7 +72,7 @@ $sizeChoseComment: 1.3rem
 
 
 .sizeComments
-  transform: scaleX(.5)
+  transform: scaleX($scaleContent)
   width: 100%
   display: flex
   justify-content: center
