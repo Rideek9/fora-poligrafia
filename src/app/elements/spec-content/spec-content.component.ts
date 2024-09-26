@@ -10,4 +10,5 @@ import { ButtonActionComponent } from '../button-action/button-action.component'
 })
 export class SpecContentComponent {
   @Input() data: any | undefined;
+  @Input() imgURL: any | undefined;
 }

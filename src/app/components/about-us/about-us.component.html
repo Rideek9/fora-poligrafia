@@ -1,14 +1,14 @@
 <div class="wrapperAboutUs" id="about">
   <div class="elementsAboutUs">
     @for (items of sortInformation; track items.name) {
-      @if (items.active) {
+      @if (items.isActive) {
         <div
           (click)="Activated(items.name)"
           class=" itemAboutUs {{
             elementActive === items.name ? 'activeItemAboutUs' : ''
           }}"
         >
-          <i [class]="items.icon"></i>
+          <i [class]="items.iconAddress"></i>
         </div>
       }
     }
@@ -17,10 +17,10 @@
   <div class="descriptionAboutUs">
     @for (items of sortInformation; track items.name) {
       @if (items.name === elementActive) {
-        <span [hidden]="!items.active" class="informationHeader">{{
+        <span [hidden]="!items.isActive" class="informationHeader">{{
           items.name
         }}</span>
-        <p [hidden]="!items.active">{{ items.description }}</p>
+        <p [hidden]="!items.isActive">{{ items.description }}</p>
       }
     }
   </div>

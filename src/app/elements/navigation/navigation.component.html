@@ -1,10 +1,10 @@
 <nav class="navWrapper" id="expirence">
-  @for (item of dataNavigation; track item.name) {
+  @for (item of dataNavigation; track $index) {
     <p
-      (click)="changeElement(item.name)"
-      [classList]="activeElement === item.name ? 'activeItem' : ''"
+      (click)="changeElement(item)"
+      [classList]="activeElement === item ? 'activeItem' : ''"
     >
-      {{ item.name }}
+      {{ item }}
     </p>
   }
 </nav>

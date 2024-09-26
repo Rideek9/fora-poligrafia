@@ -3,6 +3,7 @@ import { NavigationComponent } from '../../elements/navigation/navigation.compon
 import { SpecContentComponent } from '../../elements/spec-content/spec-content.component';
 import { data } from '../../../../public/datas/specData';
 import { ButtonActionComponent } from '../../elements/button-action/button-action.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-specialties',
@@ -12,8 +13,7 @@ import { ButtonActionComponent } from '../../elements/button-action/button-actio
   styleUrl: './specialties.component.sass',
 })
 export class SpecialtiesComponent implements OnInit {
-  activeElement = 'znakowanie';
-
+  activeElement: any;
   navigationSpecialties = [
     {
       name: 'znakowanie',
@@ -28,20 +28,48 @@ export class SpecialtiesComponent implements OnInit {
       name: 'branding',
     },
   ];
+  specjalisationList: any;
+  listEement: any = [];
 
   contentSpecjalist: any;
 
+  //fetchData
+  urlAPI = 'http://admin.fora-poligrafia.pl/api';
+  imgAPI = 'http://admin.fora-poligrafia.pl';
+
+  constructor(private http: HttpClient) {}
+
+  getDataElement() {
+    this.http
+      .get(`${this.urlAPI}/menu-foras?populate=*`)
+      .subscribe((daelement) => {
+        this.specjalisationList = daelement;
+        this.specjalisationList.data.map((item: any) => {
+          if (!this.listEement.includes(item.sectionName)) {
+            this.listEement.push(item.sectionName);
+          }
+        });
+        this.activeElement = this.listEement[0];
+        this.contentSpecjalist = this.specjalisationList.data.filter(
+          (item: any) => {
+            return item.sectionName === this.activeElement;
+          },
+        );
+      });
+  }
+
   ngOnInit(): void {
-    this.contentSpecjalist = data.filter((spec) => {
-      return spec.specialization === this.activeElement;
-    });
+    this.getDataElement();
   }
 
   //change activeElement emiter
   changeElement(item: string) {
     this.activeElement = item;
-    this.contentSpecjalist = data.filter((spec) => {
-      return spec.specialization === this.activeElement;
-    });
+    this.contentSpecjalist = this.specjalisationList.data.filter(
+      (spec: any) => {
+        return spec.sectionName === this.activeElement;
+      },
+    );
+    console.log(this.contentSpecjalist);
   }
 }

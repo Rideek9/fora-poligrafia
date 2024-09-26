@@ -1,21 +1,31 @@
 <div class="contentWrapper">
   @for (item of data; track $index) {
-    <div class="contentElement">
-      <p class="contentDescription">
-        {{ item.description }}
-      </p>
-      <div
-        class="contentPhoto"
-        style="background-image: url({{ item.photoUrl }})"
-      >
-        <p>
-          {{ item.name }}
+    @if (item.activeElement) {
+      <div class="contentElement">
+        <p class="contentDescription">
+          {{ item.description }}
         </p>
+        @if (item.image) {
+          <div
+            class="contentPhoto"
+            style="background-image: url({{ imgURL }}{{ item.image[0].url }})"
+          >
+            <p>
+              {{ item.name }}
+            </p>
+          </div>
+        } @else {
+          <div class="contentPhoto">
+            <p>
+              {{ item.name }}
+            </p>
+          </div>
+        }
       </div>
-    </div>
+    }
   }
   <app-button-action
-    [actionButton]="'#Portfolio'"
     [actionButtonText]="'Sprawdź'"
+    [actionButton]="'#Portfolio'"
   />
 </div>

@@ -14,12 +14,11 @@ export class TrustUsContentComponent implements OnInit {
   @Input() dataComent!: any;
 
   DataElement = dataTrust;
-
   elementActive: string = '';
   dataComents: any = [];
   commentsLength: any;
-
   commentsChose: any = 0;
+  elementicon: any = 0;
 
   ngOnInit(): void {
     this.elementActive =
@@ -27,6 +26,11 @@ export class TrustUsContentComponent implements OnInit {
         Math.floor(Math.random() * this.DataElement.length)
       ].icon;
     this.changeComments();
+  }
+
+  ngAfterViewInit() {
+    this.elementicon = document.getElementsByClassName('IconTrust').length;
+    console.log(this.elementicon);
   }
 
   //funkcja zmieniania ikon
@@ -51,4 +55,6 @@ export class TrustUsContentComponent implements OnInit {
     this.commentsChose = nub;
     console.log(this.commentsChose);
   };
+
+  //ile jest elementów Icon
 }

@@ -1,21 +1,23 @@
 <div class="logoTrustUs">
-  @for (item of dataComent; track $index) {
-    <i
-      (click)="changeElementActive(item.icon)"
-      class="{{ item.icon }} IconTrust {{
-        item.sizeIcon === 'big' ? 'bigIcon' : ''
-      }}
+  <div class="elementLogo">
+    @for (item of dataComent; track $index) {
+      <i
+        (click)="changeElementActive(item.icon)"
+        class="{{ item.icon }} IconTrust  {{
+          item.sizeIcon === 'big' ? 'bigIcon' : ''
+        }}
 {{ item.icon === elementActive ? 'activeTrust' : '' }}"
-    ></i>
-  }
+      ></i>
+    }
+  </div>
 </div>
 <div class="descriptionTrusUs">
   @for (item of dataComents; track $index) {
     @if ($index === commentsChose) {
-      <div
-        class="avatarIcon"
-        style="background-image: url('{{ item.photoURL }}')"
-      ></div>
+      <!--      <div-->
+      <!--        class="avatarIcon"-->
+      <!--        style="background-image: url('{{ item.photoURL }}')"-->
+      <!--      ></div>-->
       <p>
         {{ item.description }}
       </p>
