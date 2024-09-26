@@ -1,37 +1,18 @@
 <div class="logoTrustUs">
   <div class="elementLogo">
     @for (item of dataComent; track $index) {
-      <i
-        (click)="changeElementActive(item.icon)"
-        class="{{ item.icon }} IconTrust  {{
-          item.sizeIcon === 'big' ? 'bigIcon' : ''
-        }}
-{{ item.icon === elementActive ? 'activeTrust' : '' }}"
-      ></i>
+      <div
+        (click)="takeElement(item.name)"
+        class="logoElement {{ aciveElement === item.name ? 'activeEl' : '' }}"
+        [style.mask-image]="'url(' + adresURL + item.image.url + ')'"
+        [style.transform]="'scale(' + item.sizeLogo + ')'"
+      ></div>
     }
   </div>
 </div>
 <div class="descriptionTrusUs">
-  @for (item of dataComents; track $index) {
-    @if ($index === commentsChose) {
-      <!--      <div-->
-      <!--        class="avatarIcon"-->
-      <!--        style="background-image: url('{{ item.photoURL }}')"-->
-      <!--      ></div>-->
-      <p>
-        {{ item.description }}
-      </p>
-    }
-  }
-</div>
-<div class="sizeComments">
-  @for (item of [].constructor(commentsLength); track $index) {
-    <div
-      (click)="changeNumberComent($index)"
-      class="numberOfComment {{
-        $index === commentsChose ? 'activeNumberComment' : ''
-      }}"
-    ></div>
+  @for (coment of dataComments; track coment.name) {
+    <p>{{ coment.description }}</p>
   }
 </div>
 <div class="wrapperButton">

@@ -1,60 +1,42 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ButtonActionComponent } from '../button-action/button-action.component';
-import { dataTrust } from '../../../../public/datas/trustData';
-import { NgForOf } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-trust-us-content',
   standalone: true,
-  imports: [ButtonActionComponent, NgForOf],
+  imports: [ButtonActionComponent],
   templateUrl: './trust-us-content.component.html',
   styleUrl: './trust-us-content.component.sass',
 })
 export class TrustUsContentComponent implements OnInit {
   @Input() dataComent!: any;
+  @Input() adresURL!: any;
+  dataElemets: any;
+  dataComments: any;
+  aciveElement: any;
 
-  DataElement = dataTrust;
-  elementActive: string = '';
-  dataComents: any = [];
-  commentsLength: any;
-  commentsChose: any = 0;
-  elementicon: any = 0;
+  urlAddres = 'https://admin.fora-poligrafia.pl';
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.elementActive =
-      this.DataElement[
-        Math.floor(Math.random() * this.DataElement.length)
-      ].icon;
-    this.changeComments();
+    this.http
+      .get(this.urlAddres + '/api/trust-uses?populate=*')
+      .subscribe((data: any) => {
+        this.dataElemets = data.data;
+        this.takeRandomElement();
+        this.takeElement(this.aciveElement);
+      });
   }
 
-  ngAfterViewInit() {
-    this.elementicon = document.getElementsByClassName('IconTrust').length;
-    console.log(this.elementicon);
+  takeElement(item: any): void {
+    this.aciveElement = item;
+    this.dataComments = this.dataElemets.filter(
+      (elem: any) => elem.name === item,
+    );
   }
 
-  //funkcja zmieniania ikon
-  changeElementActive = (item: string) => {
-    this.elementActive = item;
-    this.changeComments();
-    this.commentsChose = 0;
-  };
-
-  //filtrowanie odpowiedniej ilości komentarzy
-  changeComments = () => {
-    const dataFunction = this.DataElement.filter(
-      (item) => item.icon === this.elementActive,
-    )[0].comments;
-
-    this.commentsLength = dataFunction.length;
-    this.dataComents = dataFunction;
-  };
-
-  //zmiana numeru komentarza
-  changeNumberComent = (nub: number) => {
-    this.commentsChose = nub;
-    console.log(this.commentsChose);
-  };
-
-  //ile jest elementów Icon
+  takeRandomElement() {
+    this.aciveElement = this.dataElemets[Math.floor(Math.random() * 4)].name;
+  }
 }

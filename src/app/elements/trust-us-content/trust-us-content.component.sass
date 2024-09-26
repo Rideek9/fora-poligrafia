@@ -8,102 +8,53 @@ $sizeChoseComment: 1.3rem
 
 .logoTrustUs
   display: flex
-  padding: 3rem 0
+  padding: 1.5rem 2rem
   justify-content: center
-  //transform: scaleX($scaleContent)
-  width: 60%
+  width: 80%
   position: relative
   align-items: center
   margin: 0 auto
   overflow: hidden
 
+
 .elementLogo
-  margin: 0 calc($iconSize * 2)
   width: 100%
-  display: flex
-  justify-content: center
-  gap: calc($iconSize * 2)
-
-
-
-.descriptionTrusUs
-  width: 60%
   display: grid
-  margin: 0 auto
-  grid-template-columns: 1fr
-  padding: 3rem 0
-  //transform: scaleX($scaleContent)
+  grid-template-columns: repeat(4, 1fr)
+  justify-content: center
+  align-items: center
   gap: 2rem
 
 
+.logoElement
+  width: 100%
+  height: 6rem
+  background-color: lighten($mainColor,20)
+  mask-size: contain
+  mask-repeat: no-repeat
+  mask-position: center
+  transition: all .2s ease-in-out
+  cursor: pointer
+
+  &:hover
+    background-color: $secondColor
+
+.activeEl
+  background-color: $secondColor
+
+
+.descriptionTrusUs
+  width: 80%
+  height: 10rem
+  margin: 2rem auto
+  overflow: scroll
+
+
   & > p
+    width: 80%
     font-size: 1.8rem
     letter-spacing: 2px
-    line-height: 3rem
+    text-align: justify
+    padding: 0 2rem
+    margin: 0 auto
 
-  & > .avatarIcon
-    width: 8rem
-    height: 8rem
-    background-color: $mainColor
-    border-radius: 50%
-    margin: 0 0 0 auto
-    background-size: cover
-
-
-
-
-
-
-.IconTrust
-  font-size: $iconSize
-  color: lighten($mainColor, 20)
-  transition: all .4s ease-in-out
-  cursor: pointer
-
-
-
-  &:hover
-    color: $secondColor
-    transform: scale($iconHoverScale)
-
-.bigIcon
-  transform: scale($iconBigScale)
-
-
-  &:hover
-    color: $secondColor
-    transform: scale($iconBigScale * $iconHoverScale)
-
-
-
-
-.activeTrust
-  color: $secondColor
-
-
-.wrapperButton
-  //transform: scaleX($scaleContent)
-  width: 100%
-  display: flex
-  justify-content: end
-  padding: 2rem  5rem
-
-
-.sizeComments
-  //transform: scaleX($scaleContent)
-  width: 100%
-  display: flex
-  justify-content: center
-  gap: 1rem
-
-
-.numberOfComment
-  width: $sizeChoseComment
-  height: $sizeChoseComment
-  background-color:  lighten($mainColor,15)
-  border-radius: 50%
-
-  cursor: pointer
-
-.activeNumberComment
-  background-color: $secondColor
