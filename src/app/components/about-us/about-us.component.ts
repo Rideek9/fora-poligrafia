@@ -13,7 +13,7 @@ export class AboutUsComponent implements OnInit {
   // sort information from piority
   elementActive: any;
   //fetchDataSerwer
-  urlAddres: string = 'http://admin.fora-poligrafia.pl/api';
+  urlAddres: string = 'https://admin.fora-poligrafia.pl/api';
   dataElementNew: any;
   // sortInformation = this.information.sort((a, b) => a.piority - b.piority);
   sortInformation: any;
