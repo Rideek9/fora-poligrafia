@@ -70,6 +70,5 @@ export class SpecialtiesComponent implements OnInit {
         return spec.sectionName === this.activeElement;
       },
     );
-    console.log(this.contentSpecjalist);
   }
 }
