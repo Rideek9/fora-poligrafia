@@ -34,8 +34,8 @@ export class SpecialtiesComponent implements OnInit {
   contentSpecjalist: any;
 
   //fetchData
-  urlAPI = 'http://admin.fora-poligrafia.pl/api';
-  imgAPI = 'http://admin.fora-poligrafia.pl';
+  urlAPI = 'https://admin.fora-poligrafia.pl/api';
+  imgAPI = 'https://admin.fora-poligrafia.pl';
 
   constructor(private http: HttpClient) {}
 
