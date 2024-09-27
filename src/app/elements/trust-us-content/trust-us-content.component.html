@@ -1,18 +1,28 @@
 <div class="logoTrustUs">
   <div class="elementLogo">
-    @for (item of dataComent; track $index) {
+    @for (item of iconCompany; track $index) {
       <div
         (click)="takeElement(item.name)"
         class="logoElement {{ aciveElement === item.name ? 'activeEl' : '' }}"
-        [style.mask-image]="'url(' + adresURL + item.image.url + ')'"
+        [style.mask-image]="'url(' + adresURL + item.urlAddres + ')'"
         [style.transform]="'scale(' + item.sizeLogo + ')'"
       ></div>
     }
   </div>
 </div>
 <div class="descriptionTrusUs">
-  @for (coment of dataComments; track coment.name) {
-    <p>{{ coment.description }}</p>
+  @for (coment of dataComments; track coment.documentId) {
+    @if ($index === indexElement) {
+      <p>{{ coment.description }}</p>
+    }
+  }
+</div>
+<div class="indexComponent">
+  @for (coment of dataComments; track $index) {
+    <div
+      (click)="changeIndexElement($index)"
+      class="indexElement {{ indexElement === $index ? 'activeIndex' : '' }}"
+    ></div>
   }
 </div>
 <div class="wrapperButton">

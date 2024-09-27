@@ -1,6 +1,12 @@
 <div class="wrapperTrust">
   <p>Zaufali nam</p>
   <div class="trustContents" id="trust-us">
+    @if (dataComents.length === 0) {
+      <p class="errorMessage">
+        Błąd połaczenia z serwerem!! proszę przeładować stronę boć zgłosić się
+        do administartora strony
+      </p>
+    }
     <app-trust-us-content [adresURL]="urlAddres" [dataComent]="dataComents" />
   </div>
 </div>

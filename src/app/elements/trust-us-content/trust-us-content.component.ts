@@ -15,6 +15,8 @@ export class TrustUsContentComponent implements OnInit {
   dataElemets: any;
   dataComments: any;
   aciveElement: any;
+  iconCompany: any = [];
+  indexElement: number = 0;
 
   urlAddres = 'https://admin.fora-poligrafia.pl';
   constructor(private http: HttpClient) {}
@@ -26,6 +28,7 @@ export class TrustUsContentComponent implements OnInit {
         this.dataElemets = data.data;
         this.takeRandomElement();
         this.takeElement(this.aciveElement);
+        this.takeIconElement();
       });
   }
 
@@ -34,9 +37,28 @@ export class TrustUsContentComponent implements OnInit {
     this.dataComments = this.dataElemets.filter(
       (elem: any) => elem.name === item,
     );
+    this.indexElement = 0;
   }
 
   takeRandomElement() {
     this.aciveElement = this.dataElemets[Math.floor(Math.random() * 4)].name;
+  }
+
+  takeIconElement() {
+    this.dataElemets.map((elem: any) => {
+      if (this.iconCompany.find((item: any) => item.name === elem.name)) {
+        return;
+      }
+      this.iconCompany.push({
+        name: elem.name,
+        urlAddres: elem.image.url,
+        sizeLogo: elem.sizeLogo,
+      });
+    });
+    console.log(this.dataElemets);
+  }
+
+  changeIndexElement(index: number) {
+    this.indexElement = index;
   }
 }

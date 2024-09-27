@@ -4,6 +4,7 @@ $iconSize: 3.5rem
 $iconBigScale: 1.6
 $iconHoverScale: 1.2
 $sizeChoseComment: 1.3rem
+$nextElementSize: 1.5rem
 
 
 .logoTrustUs
@@ -57,4 +58,26 @@ $sizeChoseComment: 1.3rem
     text-align: justify
     padding: 0 2rem
     margin: 0 auto
+
+
+
+.indexComponent
+  width: 60%
+  //background-color: $secondColor
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: $nextElementSize
+
+.indexElement
+  width: $nextElementSize
+  height: $nextElementSize
+  border-radius: 50%
+  background-color: lighten($mainColor,20)
+  cursor: pointer
+
+.activeIndex
+  background-color: $secondColor
+
 
