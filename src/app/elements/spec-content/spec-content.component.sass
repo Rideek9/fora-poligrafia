@@ -7,7 +7,8 @@
   display: grid
   grid-template-columns: 1fr
   grid-template-rows: auto 1fr
-  gap: 6rem
+  gap: 8rem
+  position: relative
 
 
 .contentElement
@@ -35,16 +36,20 @@
     grid-column: 2 / span 2
     grid-row: 1 / span 1
 
+
+
   & > .contentDescription
     height: 100%
-    font-size: 2rem
-    letter-spacing: 2px
-    text-align: justify
-    line-height: 3rem
     overflow: scroll
     padding: 0 2rem
     cursor: default
     user-select: none
+
+    & > p
+      font-size: 2rem
+      letter-spacing: 2px
+      text-align: justify
+      line-height: 3rem
 
   & > .contentPhoto
     width: 100%
@@ -74,3 +79,74 @@
       text-align: center
 
 
+
+
+.showMore
+  font-size: 1.6rem
+  margin: 0 auto
+  grid-column: 1 / -1
+  cursor: pointer
+  transition: all .2s ease-in-out
+  padding: .5rem 2rem
+  background-color:  $secondColor
+  color: $mainColor
+  border-radius: 2rem
+  font-weight: 600
+  margin-top: 2rem
+
+  &:hover
+    transform: scale(1.1)
+
+  &:active
+      transform: scale(.95)
+
+
+.popUp
+  width: 100%
+  height: auto
+  background-color: $secondColor-dark
+  border-radius: 10rem
+  overflow: hidden
+
+.photo
+  height: 30rem
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  position: relative
+
+  & > p
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-size: 3rem
+    font-weight: 600
+    letter-spacing: 2px
+
+.photoDark
+  width: 100%
+  height: 100%
+  background-color: rgba($mainColor,.6)
+
+
+.popupDescription
+  width: 60%
+  padding: 2rem
+  margin: 0 auto
+
+  & > p
+    font-size: 2rem
+    color: $mainColor-dark
+    text-align: justify
+
+
+
+.exitPopup
+  position: absolute
+  top: 2rem
+  right: 10rem
+  cursor: pointer
+
+.hiden
+  display: none

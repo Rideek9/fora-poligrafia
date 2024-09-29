@@ -11,4 +11,26 @@ import { ButtonActionComponent } from '../button-action/button-action.component'
 export class SpecContentComponent {
   @Input() data: any | undefined;
   @Input() imgURL: any | undefined;
+
+  activePopup: boolean = false;
+  showElement: any = '';
+  showActivData: any;
+
+  openPopUP(index: any) {
+    this.activePopup = true;
+    this.showElement = index;
+
+    this.showActivData = this.data.filter((item: any) => {
+      return item.name === this.showElement;
+    });
+
+    const elementStart = document.getElementsByClassName('specialtiesWrapper');
+    window.scrollTo({
+      top: elementStart[0].clientHeight + 100,
+    });
+  }
+
+  closePopUp() {
+    this.activePopup = false;
+  }
 }

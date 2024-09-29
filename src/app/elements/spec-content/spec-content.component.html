@@ -1,10 +1,31 @@
-<div class="contentWrapper">
+@if (activePopup) {
+  <div id="popup" class="popUp">
+    <div
+      class="photo"
+      style="background-image: url({{ imgURL }}{{
+        showActivData[0].image[0].url
+      }})"
+    >
+      <div class="photoDark"></div>
+      <p>{{ showActivData[0].name }}</p>
+    </div>
+    <p class="exitPopup" (click)="closePopUp()">close</p>
+    <div class="popupDescription">
+      <p>{{ showActivData[0].moredescription }}</p>
+    </div>
+  </div>
+}
+<div class="contentWrapper {{ activePopup ? 'hiden' : '' }}">
   @for (item of data; track $index) {
     @if (item.activeElement) {
       <div class="contentElement">
-        <p class="contentDescription">
-          {{ item.description }}
-        </p>
+        <div class="contentDescription">
+          <p>
+            {{ item.description }}
+          </p>
+        </div>
+        <p (click)="openPopUP(item.name)" class="showMore">czytaj wiecej</p>
+
         @if (item.image) {
           <div
             class="contentPhoto"
@@ -24,6 +45,7 @@
       </div>
     }
   }
+
   <app-button-action
     [actionButtonText]="'Sprawdź'"
     [actionButton]="'#Portfolio'"
