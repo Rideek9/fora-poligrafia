@@ -1,33 +1,38 @@
-<div class="logoTrustUs">
-  <div class="elementLogo">
-    @for (item of iconCompany; track $index) {
+<div (mouseleave)="startInterval()" (mousemove)="interwalStop()">
+  <div class="logoTrustUs">
+    <div
+      [style.grid-template-columns]="'repeat(' + gridSize + ',1fr)'"
+      class="elementLogo"
+    >
+      @for (item of seeIcon; track $index) {
+        <div
+          (click)="takeElement(item.name)"
+          class="logoElement {{ aciveElement === item.name ? 'activeEl' : '' }}"
+          [style.mask-image]="'url(' + adresURL + item.urlAddres + ')'"
+          [style.transform]="'scale(' + item.sizeLogo + ')'"
+        ></div>
+      }
+    </div>
+  </div>
+  <div class="descriptionTrusUs">
+    @for (coment of dataComments; track coment.documentId) {
+      @if ($index === indexElement) {
+        <p>{{ coment.description }}</p>
+      }
+    }
+  </div>
+  <div class="indexComponent">
+    @for (coment of dataComments; track $index) {
       <div
-        (click)="takeElement(item.name)"
-        class="logoElement {{ aciveElement === item.name ? 'activeEl' : '' }}"
-        [style.mask-image]="'url(' + adresURL + item.urlAddres + ')'"
-        [style.transform]="'scale(' + item.sizeLogo + ')'"
+        (click)="changeIndexElement($index)"
+        class="indexElement {{ indexElement === $index ? 'activeIndex' : '' }}"
       ></div>
     }
   </div>
-</div>
-<div class="descriptionTrusUs">
-  @for (coment of dataComments; track coment.documentId) {
-    @if ($index === indexElement) {
-      <p>{{ coment.description }}</p>
-    }
-  }
-</div>
-<div class="indexComponent">
-  @for (coment of dataComments; track $index) {
-    <div
-      (click)="changeIndexElement($index)"
-      class="indexElement {{ indexElement === $index ? 'activeIndex' : '' }}"
-    ></div>
-  }
-</div>
-<div class="wrapperButton">
-  <app-button-action
-    [actionButtonText]="'Zerknij'"
-    [actionButton]="'#trust-us'"
-  />
+  <div class="wrapperButton">
+    <app-button-action
+      [actionButtonText]="'Zerknij'"
+      [actionButton]="'#trust-us'"
+    />
+  </div>
 </div>
