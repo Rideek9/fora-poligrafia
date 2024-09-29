@@ -135,11 +135,14 @@ export class TrustUsContentComponent implements OnInit {
       for (let i = 0; i < this.howMuchIndex.length; i++) {
         this.seeIcon.push(this.iconCompany[this.howMuchIndex[i]]);
       }
-
       this.aciveElement = this.seeIcon[0].name;
+
+      this.takeElement(this.aciveElement);
+      console.log(this.dataComments);
     }, 2500);
   }
 
+  //stop change elements function.
   interwalStop() {
     if (this.isPauseInterwal) {
       return;
