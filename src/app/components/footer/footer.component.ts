@@ -14,18 +14,22 @@ export class FooterComponent {
     {
       name: 'polityka prywatności',
       url: '/polityka-prywatnosci',
+      active: true,
     },
     {
       name: 'regulamin',
       url: '/regulamin',
+      active: true,
     },
     {
       name: 'cennik',
       url: '/cennik',
+      active: true,
     },
     {
       name: 'cookies',
       url: '/cookies',
+      active: true,
     },
   ];
   protected readonly Date = Date;
