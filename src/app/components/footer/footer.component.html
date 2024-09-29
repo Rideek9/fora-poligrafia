@@ -1,0 +1,23 @@
+<div class="wraperNavigation">
+  <div class="wrapperFooter">
+    <div class="footerNavigation">
+      @for (item of nanavigationFooter; track $index) {
+        <a routerLink="{{ item.url }}">{{ item.name }}</a>
+      }
+    </div>
+    <div
+      (click)="goToMainpage()"
+      [style.cursor]="'pointer'"
+      class="LogoFora"
+    ></div>
+    <div class="coppyWrapper">
+      <p class="coppy">
+        Copywrithing <span>{{ Date() | date: 'yyyy' }}</span>
+      </p>
+      <div class="createdWrapper">
+        <p>create by</p>
+        <a href="https:/www.wp.pl" target="_blank">rabdev.pl</a>
+      </div>
+    </div>
+  </div>
+</div>

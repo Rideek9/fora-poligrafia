@@ -1,6 +1,64 @@
-.imageSVG
-  width: 500px
-  height: 4rem
-  mask-size: contain
-  mask-repeat: no-repeat
+@import 'variables'
 
+.wraperNavigation
+  width: 80%
+  min-height: 20vh
+  margin: 5rem auto
+  border-radius: 5rem
+  background-color: $mainColor-dark
+  transform: skewY(-3deg)
+
+.wrapperFooter
+  display: grid
+  justify-content: center
+  align-items: center
+  padding: 4rem
+  gap: 2rem
+  transform: skewY(3deg)
+
+
+
+.coppy, .coppy span
+  font-size: 1.5rem
+  letter-spacing: 2px
+  text-transform: lowercase
+  text-align: center
+
+
+.createdWrapper
+  display: flex
+  flex-direction: column
+  margin-top: 1rem
+  justify-content: center
+  align-items: center
+
+  & > p
+    font-size: 1.4rem
+    text-transform: uppercase
+    font-weight: 100
+    letter-spacing: 2px
+
+
+  & > a
+    color: white
+    font-size: 1.8rem
+    text-decoration: none
+
+
+.footerNavigation
+  width: 100%
+  display: flex
+  gap: 3rem
+  align-items: center
+
+
+  & > a
+    font-size: 2rem
+    color: $textColor
+    text-decoration: none
+    font-weight: 200
+    letter-spacing: 2px
+    transition: all .2s ease-in-out
+
+    &:hover
+      color: $secondColor

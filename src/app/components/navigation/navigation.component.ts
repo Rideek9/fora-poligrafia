@@ -123,7 +123,7 @@ export class NavigationComponent implements OnInit {
     } else if (aboutTop.y - window.innerHeight + 200 <= 0) {
       this.urladdress = '/#about';
     } else {
-      window.history.replaceState({ path: '' }, '', '');
+      // window.history.replaceState({ path: '' }, '', '');
       this.urladdress = '';
     }
   }
