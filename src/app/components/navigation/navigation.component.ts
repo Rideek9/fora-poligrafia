@@ -116,11 +116,11 @@ export class NavigationComponent implements OnInit {
     let trustUs = trust_us.getBoundingClientRect();
 
     // @ts-ignore
-    if (trustUs.y - window.innerHeight / 2 <= 0) {
+    if (trustUs.y - window.innerHeight + 200 <= 0) {
       this.urladdress = '/#trust-us';
-    } else if (expect.y - window.innerHeight / 2 <= 0) {
+    } else if (expect.y - window.innerHeight + 200 <= 0) {
       this.urladdress = '/#expirence';
-    } else if (aboutTop.y - window.innerHeight / 2 <= 0) {
+    } else if (aboutTop.y - window.innerHeight + 200 <= 0) {
       this.urladdress = '/#about';
     } else {
       window.history.replaceState({ path: '' }, '', '');
