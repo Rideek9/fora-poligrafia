@@ -19,6 +19,7 @@ import { HttpClient } from '@angular/common/http';
 export class TrustUsContentComponent implements OnInit {
   @Input() dataComent!: any;
   @Input() adresURL!: any;
+
   dataElemets: any;
   dataComments: any;
   aciveElement: any;
@@ -30,6 +31,7 @@ export class TrustUsContentComponent implements OnInit {
 
   isPauseInterwal = false;
   intervalWorking: any;
+  timeToChangeElemetn: number = 8000;
 
   urlAddres = 'https://admin.fora-poligrafia.pl';
   constructor(private http: HttpClient) {}
@@ -139,7 +141,7 @@ export class TrustUsContentComponent implements OnInit {
 
       this.takeElement(this.aciveElement);
       console.log(this.dataComments);
-    }, 2500);
+    }, this.timeToChangeElemetn);
   }
 
   //stop change elements function.

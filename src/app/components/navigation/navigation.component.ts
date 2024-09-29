@@ -1,5 +1,6 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ShowElementURLService } from '../../service/show-element-url.service';
+import { Route } from '@angular/router';
 import {
   NavigationEnd,
   Router,
@@ -7,6 +8,7 @@ import {
   RouterLinkActive,
 } from '@angular/router';
 import { filter } from 'rxjs';
+import { Element } from '@angular/compiler';
 
 @Component({
   selector: 'app-navigation',
@@ -34,15 +36,14 @@ export class NavigationComponent implements OnInit {
       active: true,
     },
   ];
-
   // open navigation section
   disable = false;
-
   numberF = 0;
+  urladdress = '';
+  activeUrlAddress: string = '';
 
   //location UIRL
 
-  urladdress = '';
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -72,6 +73,7 @@ export class NavigationComponent implements OnInit {
     } else {
       this.disable = false;
     }
+    this.checkElement();
   };
 
   scrollToTop = () => {
@@ -99,5 +101,35 @@ export class NavigationComponent implements OnInit {
         behavior: 'smooth', // Płynne przewijanie
       });
     }
+  }
+
+  checkElement() {
+    const about = document.getElementById('about');
+    const expection = document.getElementById('expirence');
+    const trust_us = document.getElementById('trust-us');
+
+    // @ts-ignore
+    let aboutTop = about.getBoundingClientRect();
+    // @ts-ignore
+    let expect = expection.getBoundingClientRect();
+    // @ts-ignore
+    let trustUs = trust_us.getBoundingClientRect();
+
+    // @ts-ignore
+    if (trustUs.y - window.innerHeight / 2 <= 0) {
+      this.urladdress = '/#trust-us';
+    } else if (expect.y - window.innerHeight / 2 <= 0) {
+      this.urladdress = '/#expirence';
+    } else if (aboutTop.y - window.innerHeight / 2 <= 0) {
+      this.urladdress = '/#about';
+    } else {
+      window.history.replaceState({ path: '' }, '', '');
+      this.urladdress = '';
+    }
+  }
+
+  updateURL(sectionID: string) {
+    const newURL = `${window.location.origin}${window.location.pathname}#${sectionID}`;
+    // window.history.pushState({ path, newURL }, '', newURL);
   }
 }

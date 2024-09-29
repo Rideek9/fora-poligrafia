@@ -1,29 +1,38 @@
 @import "variables"
 
 .contentWrapper
-  width: 80%
+  width: 95%
   margin: 2rem auto
   padding: 2rem
   display: grid
   grid-template-columns: 1fr
   grid-template-rows: auto 1fr
-  gap: 4rem
+  gap: 6rem
 
 
 .contentElement
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: repeat(3, 1fr)
   grid-template-rows: 30rem
-  gap: 3rem
+  gap: 1rem
   justify-content: center
   align-items: center
+
+  &:nth-child(odd) .contentPhoto
+    grid-column: 3 / span 1
+    grid-row: 1 / span 1
+
+  &:nth-child(odd) .contentDescription
+    grid-column: 1 / span 2
+    grid-row: 1 / span 1
+
 
   &:nth-child(even) .contentPhoto
     grid-column: 1 / span 1
     grid-row: 1 / span 1
 
   &:nth-child(even) .contentDescription
-    grid-column: 2 / span 1
+    grid-column: 2 / span 2
     grid-row: 1 / span 1
 
   & > .contentDescription
@@ -55,11 +64,13 @@
       text-transform: uppercase
       display: flex
       width: 100%
+      height: 100%
       justify-content: center
       align-items: center
       padding: 2rem 0
-      background-color: rgba($mainColor,.4)
+      background-color: rgba($mainColor,.6)
       cursor: default
       user-select: none
+      text-align: center
 
 
