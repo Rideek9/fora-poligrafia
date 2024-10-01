@@ -1,20 +1,20 @@
-@if (activePopup) {
-  <div id="popup" class="popUp">
-    <div
-      class="photo"
-      style="background-image: url({{ imgURL }}{{
-        showActivData[0].image[0].url
-      }})"
-    >
-      <div class="photoDark"></div>
-      <p>{{ showActivData[0].name }}</p>
-    </div>
-    <p class="exitPopup" (click)="closePopUp()">close</p>
-    <div class="popupDescription">
-      <p>{{ showActivData[0].moredescription }}</p>
-    </div>
-  </div>
-}
+<!--@if (activePopup) {-->
+<!--  <div id="popup" class="popUp">-->
+<!--    <div-->
+<!--      class="photo"-->
+<!--      style="background-image: url({{ imgURL }}{{-->
+<!--        showActivData[0].image[0].url-->
+<!--      }})"-->
+<!--    >-->
+<!--      <div class="photoDark"></div>-->
+<!--      <p>{{ showActivData[0].name }}</p>-->
+<!--    </div>-->
+<!--    <p class="exitPopup" (click)="closePopUp()">close</p>-->
+<!--    <div class="popupDescription">-->
+<!--      <p>{{ showActivData[0].moredescription }}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--}-->
 <div class="contentWrapper {{ activePopup ? 'hiden' : '' }}">
   @for (item of data; track $index) {
     @if (item.activeElement) {
@@ -24,7 +24,13 @@
             {{ item.description }}
           </p>
         </div>
-        <p (click)="openPopUP(item.name)" class="showMore">czytaj wiecej</p>
+        @if (item.moreInfor) {
+          <p (click)="openPopUP(item.name, item.documentId)" class="showMore">
+            czytaj wiecej
+          </p>
+        }
+
+        <!--        <a [routerLink]="item.name" class="showMore">czytaj wiecej</a>-->
 
         @if (item.image) {
           <div

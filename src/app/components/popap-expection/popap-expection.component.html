@@ -1,0 +1,53 @@
+@if (popapGlobalActive) {
+  <div class="popapWrapper">
+    <i class="fa-solid fa-arrow-right-from-bracket" (click)="closePopap()"></i>
+    <div class="containerWrapper">
+      <div
+        class="photoElement"
+        [style.background-image]="'url(' + addresPhoto + ')'"
+      ></div>
+      <div class="contentContainer">
+        <h4>{{ dataPopup.data?.name }}</h4>
+        @if (dataPopup.data?.moreInfor.description) {
+          <p class="descriptionConteiner">
+            {{ dataPopup.data?.moreInfor.description }}
+          </p>
+        }
+        @if (dataPopup.data?.moreInfor.whyThis) {
+          <div class="listWhyThis">
+            <p class="titleContainer">Dlaczego {{ dataPopup.data?.name }}</p>
+            @for (item of dataPopup.data?.moreInfor.whyThis; track $index) {
+              <h5>{{ item.title }}</h5>
+              @for (index of [].constructor(item.list.length); track $index) {
+                <p>{{ item.list?.[$index] }}</p>
+              }
+            }
+          </div>
+        }
+        @if (dataPopup.data?.moreInfor.usingThis) {
+          <div class="listWhyThis">
+            <p class="titleContainer">wykorzystanie</p>
+            @for (item of dataPopup.data?.moreInfor.usingThis; track $index) {
+              <h5>{{ item.title }}</h5>
+              <p>{{ item.description }}</p>
+            }
+          </div>
+        }
+        @if (dataPopup.data?.moreInfor.advantages[0]) {
+          <div class="listWhyThis">
+            <p class="titleContainer">zalety</p>
+            @for (item of dataPopup.data?.moreInfor.advantages; track $index) {
+              <h5>{{ item.title }}</h5>
+              <p>{{ item.description }}</p>
+            }
+          </div>
+        }
+
+        <p class="summaryTitle">Podsumowanie</p>
+        <p class="descriptionConteiner">
+          {{ dataPopup.data?.moreInfor.summary }}
+        </p>
+      </div>
+    </div>
+  </div>
+}
