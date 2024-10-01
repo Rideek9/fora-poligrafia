@@ -8,7 +8,6 @@ import { PhotoComponent } from './components/photo/photo.component';
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
 import { TrustUsComponent } from './components/trust-us/trust-us.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MarkdownModule } from 'ngx-markdown';
 import { PopapExpectionComponent } from './components/popap-expection/popap-expection.component';
 
 // @ts-ignore
@@ -25,7 +24,6 @@ import { PopapExpectionComponent } from './components/popap-expection/popap-expe
     SpecialtiesComponent,
     TrustUsComponent,
     FooterComponent,
-    MarkdownModule,
     PopapExpectionComponent,
   ],
   templateUrl: './app.component.html',
