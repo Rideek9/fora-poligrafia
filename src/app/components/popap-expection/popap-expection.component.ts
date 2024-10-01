@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GlobalVariableService } from '../../service/global-variable.service';
-import { ClipboardButtonComponent } from 'ngx-markdown';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-popap-expection',
   standalone: true,
-  imports: [FormsModule, ClipboardButtonComponent],
+  imports: [FormsModule],
   templateUrl: './popap-expection.component.html',
   styleUrl: './popap-expection.component.sass',
   encapsulation: ViewEncapsulation.None,

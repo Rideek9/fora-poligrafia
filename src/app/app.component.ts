@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IntegrationComponentComponent } from './components/integration-component/integration-component.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,7 +10,6 @@ import { TrustUsComponent } from './components/trust-us/trust-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PopapExpectionComponent } from './components/popap-expection/popap-expection.component';
 
-// @ts-ignore
 @Component({
   selector: 'app-root',
   standalone: true,
