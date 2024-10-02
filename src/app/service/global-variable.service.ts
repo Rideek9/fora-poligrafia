@@ -1,12 +1,40 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class GlobalVariableService {
+export class GlobalVariableService implements OnInit {
   urlAddres = 'https://admin.fora-poligrafia.pl';
+  socials = [
+    {
+      name: 'facebook',
+      icon: 'fa-brands fa-facebook-f',
+    },
+    {
+      name: 'instagram',
+      icon: 'fa-brands fa-instagram',
+    },
+  ];
+
+  navigation = [
+    {
+      name: 'o nas',
+      url: 'about',
+      active: true,
+    },
+    {
+      name: 'specjalności',
+      active: true,
+      url: 'expirence',
+    },
+    {
+      name: 'zaufali nam',
+      url: 'trust-us',
+      active: true,
+    },
+  ];
   private showMoreElementText = new BehaviorSubject<string>('');
   showMoreElementText$ = this.showMoreElementText.asObservable();
   private activePOP = new BehaviorSubject<boolean>(false);
@@ -15,6 +43,8 @@ export class GlobalVariableService {
   idElement$ = this.idElement.asObservable();
   private dataPopup = new BehaviorSubject<[]>([]);
   dataPopup$ = this.dataPopup.asObservable();
+  private socialIcon = new BehaviorSubject<[]>([]);
+  private socialIcon$ = this.socialIcon.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +69,10 @@ export class GlobalVariableService {
 
   cleanPopapData() {
     this.dataPopup.next([]);
+  }
+
+  ngOnInit() {
+    // @ts-ignore
+    this.socialIcon.next(this.socials);
   }
 }

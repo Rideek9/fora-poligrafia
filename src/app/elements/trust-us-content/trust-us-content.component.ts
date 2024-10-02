@@ -40,7 +40,6 @@ export class TrustUsContentComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.changeGrid();
-    // this.howMuchGrid(this.gridSize);
   }
 
   ngOnInit(): void {
@@ -140,7 +139,6 @@ export class TrustUsContentComponent implements OnInit {
       this.aciveElement = this.seeIcon[0].name;
 
       this.takeElement(this.aciveElement);
-      console.log(this.dataComments);
     }, this.timeToChangeElemetn);
   }
 

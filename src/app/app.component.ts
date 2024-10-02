@@ -9,6 +9,7 @@ import { SpecialtiesComponent } from './components/specialties/specialties.compo
 import { TrustUsComponent } from './components/trust-us/trust-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PopapExpectionComponent } from './components/popap-expection/popap-expection.component';
+import { MobileNavivigationComponent } from './components/mobile-navivigation/mobile-navivigation.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { PopapExpectionComponent } from './components/popap-expection/popap-expe
     TrustUsComponent,
     FooterComponent,
     PopapExpectionComponent,
+    MobileNavivigationComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',

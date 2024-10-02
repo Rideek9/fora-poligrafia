@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TrustUsContentComponent } from '../../elements/trust-us-content/trust-us-content.component';
-import { dataTrust } from '../../../../public/datas/trustData';
+
 import { HttpClient } from '@angular/common/http';
 
 @Component({

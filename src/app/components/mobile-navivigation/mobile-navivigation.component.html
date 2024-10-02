@@ -1,0 +1,35 @@
+<div
+  (click)="openNavigation()"
+  [hidden]="!navigationElement"
+  class="blureElement"
+></div>
+<nav
+  class="navigationMobile {{
+    navigationElement ? 'hidden-false' : 'hidden-true'
+  }}"
+>
+  <div [style.mask-image]="'url(/image/logoFora.svg)'" class="logoFora"></div>
+  <div class="elementNav">
+    @for (item of navigation; track item.name) {
+      <a (click)="openNavigation()" href="#{{ item.url }}">{{ item.name }}</a>
+    }
+  </div>
+  <i
+    (click)="openNavigation()"
+    class="fa-regular fa-circle-up closeNavigation"
+  ></i>
+</nav>
+
+<div class="mobileWrapper">
+  <div (click)="openNavigation()" class="navigation">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="mobileSocial">
+    @for (item of social; track $index) {
+      <i class="{{ item.icon }}"></i>
+    }
+  </div>
+  <div class="buttonMobile">
+    <i class="fa-regular fa-address-card"></i>
+  </div>
+</div>
