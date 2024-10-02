@@ -8,6 +8,8 @@
   justify-content: center
   align-items: center
   gap: 3rem
+  @media(max-width: $bp-md-plas)
+    width: 90%
 
 
 .elementsAboutUs
@@ -31,22 +33,38 @@
     transition: all .2s ease-in-out
     cursor: pointer
 
+    @media(max-width: $bp-md-plas)
+      transform: skewY(0deg)
+      width: 5rem
+      height: 5rem
+      border-radius: 50%
+
     & > i
       transform: skewY(8deg)
       font-size: 3rem
 
+      @media(max-width: $bp-md-plas)
+        transform: skewY(0deg)
+        font-size: 2rem
+
     &:hover
       transform: scale(1.7) skewY(-8deg)
       background-color: $secondColor
+      @media(max-width: $bp-md-plas)
+        transform: scale(1.7) skewY(0deg)
     &:active
       transform: scale(1.5) skewY(-8deg)
       background-color: $secondColor
+      @media(max-width: $bp-md-plas)
+        transform: scale(1.7) skewY(0deg)
 
 
   & .activeItemAboutUs
       background-color: $secondColor
       transform: scale(1.7) skewY(-8deg)
       box-shadow: 0 0 2rem .5em rgba($secondColor-dark,.4)
+      @media(max-width: $bp-md-plas)
+        transform: scale(1.7) skewY(0deg)
 
 
 
@@ -58,6 +76,8 @@
   justify-content: start
   align-items: center
   margin-top: 2rem
+  @media(max-width: $bp-md-plas)
+    width: 100%
 
 
 
@@ -66,6 +86,10 @@
     text-align: justify
     letter-spacing: 2px
     line-height: 4rem
+    @media(max-width: $bp-md-plas)
+      font-size: 1.4rem
+      letter-spacing: 1px
+      line-height: 3rem
 
 
   & > .informationHeader
