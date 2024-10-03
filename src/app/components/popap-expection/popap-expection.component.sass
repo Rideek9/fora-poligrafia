@@ -12,6 +12,11 @@
   flex-direction: column
   justify-content: center
   align-items: center
+  @media (max-width: $bp-md-plas)
+    height: 100%
+    top: 0
+    left: 0
+    transform: translate(0, 0)
 
 
   & > i
@@ -44,6 +49,7 @@
     display: flex
     flex-direction: column
     padding: 1rem 0 4rem 0
+    height: 100%
 
 .photoElement
   position: relative
@@ -57,7 +63,7 @@
     grid-column: 1 / span 1
     grid-row: 1 / span 1
     width: 100%
-    height: 100%
+    height: 40vh
 
 
 .contentContainer
@@ -67,18 +73,15 @@
   grid-template-rows: 10% auto
   width: 90%
   height: 90%
-  top: 50%
-  transform: translateY(-50%)
+  //top: 50%
+  //transform: translateY(-50%)
   justify-content: center
   align-items: center
   gap: 3rem
   overflow: scroll
   @media(max-width: $bp-md-plas)
-    overflow: auto
-    top: 0
-    transform: translateY(0)
-    height: auto
     margin: 0 auto
+
 
   & > h4
     font-size: 3rem
