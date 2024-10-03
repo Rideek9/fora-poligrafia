@@ -12,7 +12,7 @@
   flex-direction: column
   justify-content: center
   align-items: center
-  //border-radius: 5rem
+
 
   & > i
     position: absolute
@@ -21,6 +21,9 @@
     font-size: 3em
     cursor: pointer
     transition: all .2s ease-in-out
+    z-index: 1000
+    @media(max-width: $bp-md-plas)
+      top: 3rem
 
     &:hover
       color: $secondColor
@@ -31,17 +34,16 @@
       transform: scale(.95)
 
 
-.myclass
-  font-size: 3rem
-  color: pink
-
-
 .containerWrapper
   width: 100%
   height: 100%
   display: grid
   grid-template-columns: 1fr 1fr
   gap: 4rem
+  @media(max-width: $bp-md-plas)
+    display: flex
+    flex-direction: column
+    padding: 1rem 0 4rem 0
 
 .photoElement
   position: relative
@@ -51,6 +53,11 @@
   background-repeat: no-repeat
   background-size: cover
   opacity: .5
+  @media(max-width: $bp-md-plas)
+    grid-column: 1 / span 1
+    grid-row: 1 / span 1
+    width: 100%
+    height: 100%
 
 
 .contentContainer
@@ -66,6 +73,12 @@
   align-items: center
   gap: 3rem
   overflow: scroll
+  @media(max-width: $bp-md-plas)
+    overflow: auto
+    top: 0
+    transform: translateY(0)
+    height: auto
+    margin: 0 auto
 
   & > h4
     font-size: 3rem
@@ -97,6 +110,8 @@
       margin-left: 2rem
       font-weight: 100
       text-align: justify
+      @media(max-width: $bp-md-plas)
+        font-size: 1.4rem
 
     & > .titleContainer
       font-size: 2.2rem
@@ -113,3 +128,4 @@
     letter-spacing: 3px
     text-align: center
     margin-top: 2rem
+
