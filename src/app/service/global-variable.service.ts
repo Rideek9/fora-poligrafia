@@ -35,6 +35,14 @@ export class GlobalVariableService implements OnInit {
       active: true,
     },
   ];
+
+  imageSection = [
+    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
+    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
+    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: true },
+    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
+    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
+  ];
   private showMoreElementText = new BehaviorSubject<string>('');
   showMoreElementText$ = this.showMoreElementText.asObservable();
   private activePOP = new BehaviorSubject<boolean>(false);

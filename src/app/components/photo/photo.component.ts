@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgStyle } from '@angular/common';
+import { GlobalVariableService } from '../../service/global-variable.service';
 
 @Component({
   selector: 'app-photo',
@@ -8,12 +9,16 @@ import { NgStyle } from '@angular/common';
   templateUrl: './photo.component.html',
   styleUrl: './photo.component.sass',
 })
-export class PhotoComponent {
-  dataImage = [
-    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
-    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
-    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: true },
-    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
-    { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
-  ];
+export class PhotoComponent implements OnInit {
+  data: {
+    center: boolean;
+    alt: string;
+    url: string;
+  }[] = [];
+
+  constructor(private globalData: GlobalVariableService) {
+    this.data = this.globalData.imageSection;
+  }
+
+  ngOnInit() {}
 }

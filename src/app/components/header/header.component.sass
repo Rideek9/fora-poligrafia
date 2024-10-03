@@ -13,9 +13,13 @@ $opacitySlider: .7
   padding: 2rem 0
   color: $textColor
   text-decoration: none
+  @media(max-width: $bp-lg)
+    padding: 2rem 0
 
   & > i
     font-size: 8rem
+    @media(max-width: $bp-lg)
+      font-size: 6rem
 
 
 .slider
@@ -37,8 +41,8 @@ $opacitySlider: .7
   @media(max-width: $bp-lg)
     transform: skewY(0deg)
     border-radius: 0
-    height: 90vh
-    margin: 2rem 0
+    height: 80vh
+    margin: 0
 
   &__text
     transform: skewY(5deg)

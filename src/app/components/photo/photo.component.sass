@@ -8,6 +8,10 @@
   gap: 2rem
   margin: $marginSection 0
 
+  @media (max-width: $bp-md-plas)
+    grid-template-columns: 1fr
+    grid-template-rows: 60vw 60vw 60vw
+    width: 100%
 
 
 
@@ -22,12 +26,22 @@
     position: relative
     transition: all .2s ease-in-out
 
+    @media (max-width: $bp-md-plas)
+      border-radius: 0
+      &:nth-child(odd)
+        display: flex
+      &:nth-child(even)
+        display: none
+
+
+
     &::before
       content: ''
       display: block
       width: 100%
       height: 100%
       background-color: rgba($mainColor, .5)
+
 
     &:hover .descriptionPhoto
       opacity: 1
@@ -46,6 +60,9 @@
     grid-column: 2 / span 1
     grid-row: 1 / span 2
     background-position: center
+    &:nth-child(odd)
+      grid-row: auto
+      grid-column: auto
 
 
 

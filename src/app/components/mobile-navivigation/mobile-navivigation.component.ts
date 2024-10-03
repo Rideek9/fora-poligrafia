@@ -20,8 +20,6 @@ export class MobileNavivigationComponent implements OnInit {
 
   ngOnInit() {
     this.social = this.dataGlobal.socials;
-    this.navigation = this.dataGlobal.navigation;
-    console.log(this.navigation);
   }
 
   openNavigation() {

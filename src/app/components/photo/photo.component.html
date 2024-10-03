@@ -1,5 +1,5 @@
 <div class="wrapperPhoto">
-  @for (image of dataImage; track $index) {
+  @for (image of data; track $index) {
     <div
       style="background-image: url({{ image.url }})"
       class="{{ image.center ? 'centerImage' : '' }}"
