@@ -1,11 +1,11 @@
 <div class="wrapperPhoto">
-  @for (image of data; track $index) {
+  @for (image of dataPhoto; track $index) {
     <div
-      style="background-image: url({{ image.url }})"
-      class="{{ image.center ? 'centerImage' : '' }}"
+      class="{{ image.centerImage ? 'centerImage' : '' }}"
+      [style.background-image]="'url(' + addresPage + image.image[0].url + ')'"
     >
       <div class="descriptionPhoto">
-        <span class="descriptionPhoto__name">{{ image.alt }}</span>
+        <span class="descriptionPhoto__name">{{ image.text }}</span>
       </div>
     </div>
   }

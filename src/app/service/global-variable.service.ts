@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, take } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -43,6 +43,9 @@ export class GlobalVariableService implements OnInit {
     { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
     { alt: 'some txt', url: 'image/HeaderFirstImg.jpg', center: false },
   ];
+
+  dataImage: any;
+
   private showMoreElementText = new BehaviorSubject<string>('');
   showMoreElementText$ = this.showMoreElementText.asObservable();
   private activePOP = new BehaviorSubject<boolean>(false);
@@ -52,7 +55,9 @@ export class GlobalVariableService implements OnInit {
   private dataPopup = new BehaviorSubject<[]>([]);
   dataPopup$ = this.dataPopup.asObservable();
   private socialIcon = new BehaviorSubject<[]>([]);
-  private socialIcon$ = this.socialIcon.asObservable();
+  socialIcon$ = this.socialIcon.asObservable();
+  private PhotoSection = new BehaviorSubject<[]>([]);
+  PhotoSection$ = this.PhotoSection.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -77,6 +82,16 @@ export class GlobalVariableService implements OnInit {
 
   cleanPopapData() {
     this.dataPopup.next([]);
+  }
+
+  takePhotoImage() {
+    const data = this.http.get(
+      'https://admin.fora-poligrafia.pl/api/photo-sections?populate=*',
+    );
+    data.subscribe((data: any) => {
+      this.PhotoSection.next(data);
+      console.log(this.PhotoSection);
+    });
   }
 
   ngOnInit() {

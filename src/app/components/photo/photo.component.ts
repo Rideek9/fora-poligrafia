@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { GlobalVariableService } from '../../service/global-variable.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-photo',
@@ -16,9 +17,23 @@ export class PhotoComponent implements OnInit {
     url: string;
   }[] = [];
 
-  constructor(private globalData: GlobalVariableService) {
+  dataPhoto: any;
+  addresPage: string;
+
+  constructor(
+    private globalData: GlobalVariableService,
+    private http: HttpClient,
+  ) {
     this.data = this.globalData.imageSection;
+    this.addresPage = this.globalData.urlAddres;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const data = this.http.get(
+      'https://admin.fora-poligrafia.pl/api/photo-sections?populate=*',
+    );
+    data.subscribe((data: any) => {
+      this.dataPhoto = data.data;
+    });
+  }
 }
