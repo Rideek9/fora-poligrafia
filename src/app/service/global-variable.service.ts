@@ -56,8 +56,6 @@ export class GlobalVariableService implements OnInit {
   dataPopup$ = this.dataPopup.asObservable();
   private socialIcon = new BehaviorSubject<[]>([]);
   socialIcon$ = this.socialIcon.asObservable();
-  private PhotoSection = new BehaviorSubject<[]>([]);
-  PhotoSection$ = this.PhotoSection.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -82,16 +80,6 @@ export class GlobalVariableService implements OnInit {
 
   cleanPopapData() {
     this.dataPopup.next([]);
-  }
-
-  takePhotoImage() {
-    const data = this.http.get(
-      'https://admin.fora-poligrafia.pl/api/photo-sections?populate=*',
-    );
-    data.subscribe((data: any) => {
-      this.PhotoSection.next(data);
-      console.log(this.PhotoSection);
-    });
   }
 
   ngOnInit() {
