@@ -12,6 +12,7 @@
     grid-template-columns: 1fr
     grid-template-rows: 60vw 60vw 60vw
     width: 100%
+    gap: 1rem
 
 
 
@@ -60,9 +61,10 @@
     grid-column: 2 / span 1
     grid-row: 1 / span 2
     background-position: center
-    &:nth-child(odd)
-      grid-row: auto
-      grid-column: auto
+    @media (max-width: $bp-md-plas)
+      &:nth-child(odd)
+        grid-row: auto
+        grid-column: auto
 
 
 

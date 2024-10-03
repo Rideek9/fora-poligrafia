@@ -7,6 +7,9 @@
   width: 100%
   justify-content: center
   align-items: center
+  @media(max-width: $bp-md-plas)
+    flex-direction: column
+    gap: 2rem
 
 
   & > p
@@ -16,7 +19,8 @@
     text-transform: uppercase
     cursor: pointer
     transition: all .2s ease-in-out
-
+    @media(max-width: $bp-md-plas)
+      font-size: 2rem
     &:hover
       color: $secondColor
       transform: scale(1.2)

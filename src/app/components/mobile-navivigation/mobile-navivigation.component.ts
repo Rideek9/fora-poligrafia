@@ -16,11 +16,12 @@ export class MobileNavivigationComponent implements OnInit {
 
   navigationElement: boolean = false;
 
-  constructor(private dataGlobal: GlobalVariableService) {}
-
-  ngOnInit() {
+  constructor(private dataGlobal: GlobalVariableService) {
+    this.navigation = this.dataGlobal.navigation;
     this.social = this.dataGlobal.socials;
   }
+
+  ngOnInit() {}
 
   openNavigation() {
     this.navigationElement = !this.navigationElement;
