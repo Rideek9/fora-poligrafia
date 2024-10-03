@@ -7,6 +7,12 @@
   border-radius: 5rem
   background-color: $mainColor-dark
   transform: skewY(-3deg)
+  @media(max-width: $bp-md-plas)
+    width: 100%
+    transform: skewY(0deg)
+    border-radius: 0
+    margin: $marginSection 0 12rem
+
 
 .wrapperFooter
   display: grid
@@ -15,7 +21,8 @@
   padding: 4rem
   gap: 2rem
   transform: skewY(3deg)
-
+  @media(max-width: $bp-md-plas)
+    transform: skewY(0deg)
 
 
 .coppy, .coppy span
@@ -50,6 +57,9 @@
   display: flex
   gap: 3rem
   align-items: center
+  @media(max-width: $bp-md-plas)
+    flex-direction: column
+    gap: 1.5rem
 
 
   & > a
