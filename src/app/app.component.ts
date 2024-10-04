@@ -10,6 +10,7 @@ import { TrustUsComponent } from './components/trust-us/trust-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PopapExpectionComponent } from './components/popap-expection/popap-expection.component';
 import { MobileNavivigationComponent } from './components/mobile-navivigation/mobile-navivigation.component';
+import { PopupContactComponent } from './components/popup-contact/popup-contact.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import { MobileNavivigationComponent } from './components/mobile-navivigation/mo
     FooterComponent,
     PopapExpectionComponent,
     MobileNavivigationComponent,
+    PopupContactComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',

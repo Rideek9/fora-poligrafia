@@ -1,5 +1,5 @@
 <button class="buttonContact">
-  <i class="fa-regular fa-address-card"></i>
+  <i (click)="media.openContactPopup()" class="fa-regular fa-address-card"></i>
 </button>
 <div class="socialElement">
   @for (social of socials; track social.name) {

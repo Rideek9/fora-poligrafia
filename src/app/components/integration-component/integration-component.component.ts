@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MediaService } from '../../service/media.service';
 
 @Component({
   selector: 'app-integration-component',
@@ -18,4 +19,6 @@ export class IntegrationComponentComponent {
       icon: 'fa-brands fa-instagram',
     },
   ];
+
+  constructor(public media: MediaService) {}
 }

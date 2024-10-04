@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalVariableService } from '../../service/global-variable.service';
 import { RouterLink } from '@angular/router';
+import { MediaService } from '../../service/media.service';
 
 @Component({
   selector: 'app-mobile-navivigation',
@@ -16,7 +17,10 @@ export class MobileNavivigationComponent implements OnInit {
 
   navigationElement: boolean = false;
 
-  constructor(private dataGlobal: GlobalVariableService) {
+  constructor(
+    private dataGlobal: GlobalVariableService,
+    public media: MediaService,
+  ) {
     this.navigation = this.dataGlobal.navigation;
     this.social = this.dataGlobal.socials;
   }

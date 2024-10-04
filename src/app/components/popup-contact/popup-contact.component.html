@@ -1,0 +1,81 @@
+@if (media.contactOpen) {
+  <div class="wrapperPopUpContact">
+    <!--      sekcja formularzu-->
+    <div class="elementPopUP">
+      <div
+        (click)="media.openElementContact('kontakt', $event)"
+        class="contactElement {{
+          media.contactElement === 'kontakt' ? 'bigElemetn' : ''
+        }}"
+      >
+        <p class="{{ media.contactElement === 'kontakt' ? 'closeText' : '' }}">
+          Kontakt
+        </p>
+
+        <div
+          class="{{
+            media.contactElement != 'kontakt' ? 'closeText' : ''
+          }} bigElemetn"
+        >
+          <p>Kontakt</p>
+          <!--          Sekcja elementu kontaktu w wersji kontakt-->
+          <div class="contactSection">
+            <div class="companyName">
+              <p>Fora Poligrafia</p>
+              <p>Damian Rabiński</p>
+            </div>
+            <div class="contactItem">
+              <i class="fa-solid fa-square-phone"></i>
+              <a href="tel:+48{{ media.contactData.phone }}">{{
+                phoneNumber
+              }}</a>
+            </div>
+            <div class="contactItem">
+              <i class="fa-solid fa-envelope"></i>
+              <a class="emailSection" href="tel:+48507187527">{{
+                media.contactData.email
+              }}</a>
+            </div>
+            <div class="contactItem">
+              <i class="fa-solid fa-location-dot"></i>
+              <p class="streetSection">
+                ul {{ media.contactData.address.street }}
+                {{ media.contactData.address.number }}
+              </p>
+              <p class="streetSection">
+                {{ media.contactData.address.postCode }}
+                {{ media.contactData.address.city }}
+              </p>
+              <p class="streetSection">
+                NIP: {{ media.contactData.address.NIP }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--      sekcja formularzu-->
+      <div
+        (click)="media.openElementContact('formularz', $event)"
+        class="contactElement {{
+          media.contactElement === 'formularz' ? 'bigElemetn' : ''
+        }}"
+      >
+        <p
+          class="{{ media.contactElement === 'formularz' ? 'closeText' : '' }}"
+        >
+          Formularz
+        </p>
+        <div
+          class="{{
+            media.contactElement != 'formularz' ? 'closeText' : ''
+          }} bigElemetn"
+        >
+          <p>Formularz</p>
+          <!--          Sekcja to wstawienia formularzu w sekcji formularz-->
+          <div class="contactSection"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
