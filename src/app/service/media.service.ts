@@ -6,7 +6,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class MediaService {
-  public contactOpen = true;
+  public contactOpen = false;
   public contactElement = 'kontakt';
   public contactData = {
     phone: '507187527',
