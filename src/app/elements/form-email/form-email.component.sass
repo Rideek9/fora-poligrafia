@@ -1,0 +1,102 @@
+@import "variables"
+
+.information
+  position: relative
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+
+  & > h1
+    position: absolute
+    font-size: 1.6rem
+    font-weight: 300
+    letter-spacing: 2px
+    text-transform: uppercase
+    color: $mainColor
+
+  & .active
+    color: darken(green,.8)
+    font-weight: 400
+  & .wrong
+    color: darken(red,.8)
+    font-weight: 500
+
+
+.wrapperForm
+  width: 100%
+  height: 100%
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 5rem 1fr
+  justify-items: center
+  gap: 1rem
+
+
+
+.formContainer
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 2rem
+
+
+input
+  width: 100%
+  font-size: 1.4rem
+  padding: 1rem
+  border: none
+  border-radius: 2rem
+  text-align: center
+  background-color: rgba($secondColor, .8)
+  &::placeholder
+    text-transform: lowercase
+    color: lighten($mainColor,.4)
+    letter-spacing: 2px
+    font-size: 1.2rem
+  &:focus
+      outline: none
+
+
+label
+  display: none
+
+textarea
+  width: 100%
+  height: 30vh
+  grid-column: 1 / span 3
+  grid-row: 2 / span 6
+  font-size: 1.4rem
+  padding: 1rem
+  border: none
+  border-radius: 2rem
+  background-color: rgba($secondColor, .8)
+  &::placeholder
+    text-transform: lowercase
+    color: lighten($mainColor,.4)
+    letter-spacing: 2px
+    font-size: 1.2rem
+    position: relative
+    top: 50%
+    text-align: center
+  &:focus
+    outline: none
+
+button
+  font-size: 1.4rem
+  padding: 1.2rem
+  grid-column: -2
+  margin: 0 auto
+  border-radius: 2rem
+  border: none
+  color: $mainColor
+  background-color: rgba($secondColor, .8)
+  text-transform: uppercase
+  cursor: pointer
+  transition: all .2s ease-in-out
+  &:hover
+    transform: scale(1.1)
+    background-color: rgba($secondColor, .4)
+  &:active
+    transform: scale(.95)

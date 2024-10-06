@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { MediaService } from '../../service/media.service';
+import { FormEmailComponent } from '../../elements/form-email/form-email.component';
 
 @Component({
   selector: 'app-popup-contact',
   standalone: true,
-  imports: [],
+  imports: [FormEmailComponent],
   templateUrl: './popup-contact.component.html',
   styleUrl: './popup-contact.component.sass',
 })

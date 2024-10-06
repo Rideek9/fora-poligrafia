@@ -49,4 +49,8 @@ export class MediaService {
       this.contactElement = data;
     });
   }
+
+  closePopup() {
+    this.contactOpen = !this.contactOpen;
+  }
 }
