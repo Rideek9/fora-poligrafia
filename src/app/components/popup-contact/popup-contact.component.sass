@@ -32,11 +32,17 @@ $heightComponents: 70rem
   gap: 2rem
   @media(max-width: $bp-md-plas)
     width: 100%
-    height: 80%
+    height: 100%
     border-radius: 0
     position: absolute
-    top: 5rem
+    top: 0
+    //transform: translateY(-50%)
     flex-direction: column
+    gap: 1rem
+    justify-content: center
+    align-items: center
+    padding: 8rem 0
+
 
   &::before
     content: ""
@@ -65,7 +71,8 @@ $heightComponents: 70rem
   cursor: pointer
   @media(max-width: $bp-md-plas)
     width: 100%
-    height: 20%
+    height: 10%
+    border-radius: 0
 
   & > p
     font-size: 4rem
@@ -76,17 +83,20 @@ $heightComponents: 70rem
     transition: all .3s ease-in-out
     @media(max-width: $bp-md-plas)
       transform: rotate(0deg)
-      font-size: 3rem
+      font-size: 2rem
 
 .bigElemetn
     width: 100%
-    height: $heightComponents
+    height: 80%
     display: grid
     grid-template-columns: 1fr
     grid-template-rows: 0.2fr 1fr
     justify-items: center
     align-items: center
     cursor: default
+    @media(max-width: $bp-md-plas)
+      grid-template-rows: 1fr
+      gap: .5rem
 
     & > p
       font-size: 4rem
@@ -95,7 +105,7 @@ $heightComponents: 70rem
       text-transform: uppercase
       animation: openSection .5s ease-in-out
       @media(max-width: $bp-md-plas)
-        font-size: 3rem
+        display: none
 
 
     & > .contactSection
@@ -103,8 +113,12 @@ $heightComponents: 70rem
         display: flex
         flex-direction: column
         gap: 3rem
+        @media(max-width: $bp-md-plas)
+          gap: 1rem
         & > .companyName
           padding: 1rem
+          @media(max-width: $bp-md-plas)
+            padding: 0
 
           & > p
             font-size: 2.4rem
@@ -123,30 +137,42 @@ $heightComponents: 70rem
             flex-direction: column
             justify-content: center
             align-items: center
+            @media(max-width: $bp-md-plas)
+              flex-direction: column
+
 
 
             & > i
               font-size: 4rem
               color: $mainColor
               margin-bottom: 1rem
+              @media(max-width: $bp-md-plas)
+                font-size: 2.5rem
 
 
             & > a, & > p
-              font-size: 3rem
-              text-transform: uppercase
-              letter-spacing: 2px
-              color: $mainColor
-              text-decoration: none
-              font-weight: 400
+                font-size: 3rem
+                text-transform: uppercase
+                letter-spacing: 2px
+                color: $mainColor
+                text-decoration: none
+                font-weight: 400
+                @media(max-width: $bp-md-plas)
+                  font-size: 2rem
 
             & > .emailSection
-              font-size: 2rem
-              font-weight: 400
-              @media(max-width: $bp-md-plas)
-                font-size: 1.6rem
+                font-size: 2rem
+                font-weight: 400
+                @media(max-width: $bp-md-plas)
+                  font-size: 1.4rem
+                  text-align: center
 
             & > .streetSection
-                font-size: 2rem
+                  font-size: 2rem
+                  @media(max-width: $bp-md-plas)
+                    font-size: 2rem
+                    display: flex
+                    flex-direction: column
 
 
 .closeText

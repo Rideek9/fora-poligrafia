@@ -17,6 +17,7 @@
     text-transform: uppercase
     color: $mainColor
 
+
   & .active
     color: darken(green,.8)
     font-weight: 400
@@ -33,6 +34,8 @@
   grid-template-rows: 5rem 1fr
   justify-items: center
   gap: 1rem
+  @media(max-width: $bp-md-plas)
+    grid-template-rows: 2rem 1fr
 
 
 
@@ -40,6 +43,9 @@
   display: grid
   grid-template-columns: repeat(3, 1fr)
   gap: 2rem
+  @media(max-width: $bp-md-plas)
+    grid-template-columns: 80vw
+    gap: 1rem
 
 
 input
@@ -72,6 +78,10 @@ textarea
   border: none
   border-radius: 2rem
   background-color: rgba($secondColor, .8)
+  @media(max-width: $bp-md-plas)
+    grid-column: 1 / span 1
+    grid-row: 4 / span 1
+    height: 20vh
   &::placeholder
     text-transform: lowercase
     color: lighten($mainColor,.4)
