@@ -16,6 +16,9 @@
     letter-spacing: 2px
     text-transform: uppercase
     color: $mainColor
+    @media(max-width: $bp-md-plas)
+      font-size: 1.2rem
+      padding: .5rem
 
 
   & .active
@@ -35,8 +38,10 @@
   justify-items: center
   gap: 1rem
   @media(max-width: $bp-md-plas)
-    grid-template-rows: 2rem 1fr
-
+    grid-template-rows: 3rem 1fr
+    align-items: center
+    justify-content: center
+    height: 90%
 
 
 .formContainer
@@ -45,8 +50,7 @@
   gap: 2rem
   @media(max-width: $bp-md-plas)
     grid-template-columns: 80vw
-    gap: 1rem
-
+    gap: .5rem
 
 input
   width: 100%
@@ -56,6 +60,8 @@ input
   border-radius: 2rem
   text-align: center
   background-color: rgba($secondColor, .8)
+  @media(max-width: $bp-md-plas)
+    padding: 0.8rem
   &::placeholder
     text-transform: lowercase
     color: lighten($mainColor,.4)
@@ -63,7 +69,6 @@ input
     font-size: 1.2rem
   &:focus
       outline: none
-
 
 label
   display: none

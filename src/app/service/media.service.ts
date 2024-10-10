@@ -6,8 +6,8 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class MediaService {
-  public contactOpen = true;
-  public contactElement = 'formularz';
+  public contactOpen = false;
+  public contactElement = 'kontakt';
   public contactData = {
     phone: '507187527',
     email: 'damian.rabinski@fora-poligrafia.pl',
@@ -27,7 +27,7 @@ export class MediaService {
 
   openContactPopup() {
     this.contactOpen = !this.contactOpen;
-    this.contactElement = 'formularz';
+    this.contactElement = 'kontakt';
     if (this.contactOpen) {
       document.body.style.overflow = 'hidden';
     } else {
