@@ -11,10 +11,12 @@ export class GlobalVariableService implements OnInit {
     {
       name: 'facebook',
       icon: 'fa-brands fa-facebook-f',
+      addresURL: 'https://www.facebook.com/FORADAMIANRABINSKI',
     },
     {
       name: 'instagram',
       icon: 'fa-brands fa-instagram',
+      addresURL: 'https://www.instagram.com/fora_poligrafia/',
     },
   ];
 

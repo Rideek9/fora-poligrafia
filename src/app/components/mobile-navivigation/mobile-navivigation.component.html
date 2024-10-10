@@ -26,7 +26,11 @@
   </div>
   <div class="mobileSocial">
     @for (item of social; track $index) {
-      <i class="{{ item.icon }}"></i>
+      <a
+        href="{{ item.addresURL }}"
+        target="_blank"
+        class="{{ item.icon }}"
+      ></a>
     }
   </div>
   <div class="buttonMobile">

@@ -19,17 +19,17 @@ export class FooterComponent {
     {
       name: 'regulamin',
       url: '/regulamin',
-      active: true,
+      active: false,
     },
     {
       name: 'cennik',
       url: '/cennik',
-      active: true,
+      active: false,
     },
     {
       name: 'cookies',
       url: '/cookies',
-      active: true,
+      active: false,
     },
   ];
   protected readonly Date = Date;

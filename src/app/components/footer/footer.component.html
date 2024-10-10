@@ -2,7 +2,9 @@
   <div class="wrapperFooter">
     <div class="footerNavigation">
       @for (item of nanavigationFooter; track $index) {
-        <a routerLink="{{ item.url }}">{{ item.name }}</a>
+        @if (item.active) {
+          <a routerLink="{{ item.url }}">{{ item.name }}</a>
+        }
       }
     </div>
     <div

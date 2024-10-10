@@ -3,8 +3,8 @@
 </button>
 <div class="socialElement">
   @for (social of socials; track social.name) {
-    <button class="socialItem">
+    <a href="{{ social.addresURL }}" target="_blank" class="socialItem">
       <i class="{{ social.icon }}"></i>
-    </button>
+    </a>
   }
 </div>

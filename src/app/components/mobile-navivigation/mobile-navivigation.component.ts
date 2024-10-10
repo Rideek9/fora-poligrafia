@@ -11,7 +11,7 @@ import { MediaService } from '../../service/media.service';
   styleUrl: './mobile-navivigation.component.sass',
 })
 export class MobileNavivigationComponent implements OnInit {
-  social: { name: string; icon: string }[] = [];
+  social: { name: string; icon: string; addresURL: string }[] = [];
 
   navigation: { name: string; active: boolean; url: string }[] = [];
 
