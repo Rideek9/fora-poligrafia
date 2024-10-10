@@ -16,7 +16,7 @@ export class MediaService {
       number: '5c',
       postCode: '05-119',
       city: 'Łajski',
-      NIP: '536-19-41-034',
+      NIP: '5361941034',
     },
   };
 
