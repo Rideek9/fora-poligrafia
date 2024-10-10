@@ -1,0 +1,65 @@
+@import "variables"
+
+.politicWrapper
+  width: 80%
+  margin: 0 auto
+  @media(max-width: $bp-md-plas)
+    width: 100%
+    padding: 0 2rem
+
+  & > h1
+    font-size: 3rem
+    text-align: center
+    padding: 2rem 0
+
+
+
+.elementSection
+  width: 80%
+  margin: 0 auto
+  @media(max-width: $bp-md-plas)
+    width: 100%
+
+  & > h2
+    font-size: 2.5rem
+    text-align: center
+    padding: 3rem
+
+  & > ol, & > ul
+    width: 90%
+    margin: 0 auto
+    @media(max-width: $bp-md-plas)
+      width: 90%
+
+    & > li
+      font-size: 1.6rem
+      letter-spacing: 2px
+      text-align: justify
+      padding: 1rem
+
+      & > a
+        font-size: 1.6rem
+        text-decoration: none
+        color: inherit
+        cursor: pointer
+
+      & > ol
+        width: 80%
+        margin: 0 auto
+        padding: 1rem
+        @media(max-width: $bp-md-plas)
+          width: 100%
+
+        & > li
+          font-size: 1.6rem
+          padding: .5rem
+
+          & > ol
+            width: 80%
+            margin: 0 auto
+            padding: 1rem
+
+            & > li
+              font-size: 1.6rem
+              padding: .5rem
+
