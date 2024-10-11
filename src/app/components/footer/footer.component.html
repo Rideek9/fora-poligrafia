@@ -3,7 +3,7 @@
     <div class="footerNavigation">
       @for (item of nanavigationFooter; track $index) {
         @if (item.active) {
-          <a routerLink="{{ item.url }}">{{ item.name }}</a>
+          <a href="{{ item.url }}">{{ item.name }}</a>
         }
       }
     </div>
