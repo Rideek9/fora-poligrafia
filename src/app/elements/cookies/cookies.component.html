@@ -1,0 +1,45 @@
+@if (!cookiesAccepted) {
+  <div
+    (mousemove)="
+      pathName === 'polityka-prywatnosci' ? activeScroll() : blockScroll()
+    "
+    class="{{ pathName === 'polityka-prywatnosci' ? '' : 'blurBack' }}"
+  >
+    <div class="cookieWrapper {{ hidePopup ? 'hiddenPop' : '' }}">
+      <div class="contentCookie">
+        <i class="icon-ForaLogo logo"></i>
+        <i (click)="hideElement()" class="fa-solid fa-eye-slash hide"></i>
+        <div class="description">
+          <p>
+            Stosujemy pliki cookie w celu zapewnienia prawidłowego
+            funkcjonowania serwisu. Możemy również wykorzystywać pliki cookie
+            własne oraz naszych partnerów w celach analitycznych. Korzystanie z
+            analitycznych plików cookie wymaga zgody. Jeśli akceptujesz
+            wykorzystanie plików cookies kliknij "akceptuje". Jeżeli nie
+            wyrażasz zgody na na korzystanie przez nas z plików cookie inne niż
+            niezbędne do prawidłowego działania strony kliknij "odrzuć"
+          </p>
+          <p>
+            Pamiętaj że każdą z wyrażonych zgód możesz cofnąć w kazdym momencie,
+            usuwając odpowiednie pliki cookie.
+          </p>
+          <p>
+            Korzystanie z plików cookies we wskazanych powyżej celach związane
+            jest z przetwarzaniem Twoich danych osobowych. Administratorem
+            Twoich danych osobowych jest FORA Damian Rabiński z siedzibą w
+            Łajskach (05-119) przy ul. gen. Władysława Sikorskiego 5c. W pewnych
+            przypadkach administratorami danych mogą być również nasi partnerzy.
+            Więcej informacji o korzystaniu przez nas i naszych partnerów z
+            plików cookie oraz o przetwarzaniu Twoich danych osobowych, w tym a
+            przysługujących Ci uprawnieniach, znajdziesz w naszej
+            <a (click)="activeScroll()" href="/polityka-prywatnosci">
+              polityce prywatności</a
+            >
+          </p>
+        </div>
+        <button (click)="acceptCookies()" class="accept">Akceptuje</button>
+        <button (click)="declineCookies()" class="deline">Odrzuć</button>
+      </div>
+    </div>
+  </div>
+}

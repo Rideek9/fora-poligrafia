@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PopapExpectionComponent } from './components/popap-expection/popap-expection.component';
 import { MobileNavivigationComponent } from './components/mobile-navivigation/mobile-navivigation.component';
 import { PopupContactComponent } from './components/popup-contact/popup-contact.component';
+import { CookiesComponent } from './elements/cookies/cookies.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import { PopupContactComponent } from './components/popup-contact/popup-contact.
     PopapExpectionComponent,
     MobileNavivigationComponent,
     PopupContactComponent,
+    CookiesComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
