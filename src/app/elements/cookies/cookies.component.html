@@ -5,11 +5,11 @@
     "
     class="{{ pathName === 'polityka-prywatnosci' ? '' : 'blurBack' }}"
   >
-    <div class="cookieWrapper {{ hidePopup ? 'hiddenPop' : '' }}">
-      <div class="contentCookie">
+    <div class="cookieWrapper">
+      <div class="contentCookie {{ hidePopup ? 'hiddenPop' : '' }}">
         <i class="icon-ForaLogo logo"></i>
         <i (click)="hideElement()" class="fa-solid fa-eye-slash hide"></i>
-        <div class="description">
+        <div [hidden]="hidePopup" class="description">
           <p>
             Stosujemy pliki cookie w celu zapewnienia prawidłowego
             funkcjonowania serwisu. Możemy również wykorzystywać pliki cookie
@@ -37,8 +37,12 @@
             >
           </p>
         </div>
-        <button (click)="acceptCookies()" class="accept">Akceptuje</button>
-        <button (click)="declineCookies()" class="deline">Odrzuć</button>
+        <button [hidden]="hidePopup" (click)="acceptCookies()" class="accept">
+          Akceptuje
+        </button>
+        <button [hidden]="hidePopup" (click)="declineCookies()" class="deline">
+          Odrzuć
+        </button>
       </div>
     </div>
   </div>

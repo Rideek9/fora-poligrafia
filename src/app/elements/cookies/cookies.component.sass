@@ -12,7 +12,6 @@
 
 .cookieWrapper
   width: 100%
-  min-height: 30rem
   position: fixed
   bottom: 0
   z-index: 3000
@@ -23,12 +22,14 @@
   display: flex
   justify-content: center
   align-items: center
-  transition: all .5s
+  @media(max-width: $bp-md-plas)
+
+    padding: 1rem
+    margin: 0 auto
 
 .hiddenPop
-  bottom:  -30%
-  @media(max-width: $bp-md-plas)
-    bottom:  -90%
+  max-height: 5rem
+
 
 .contentCookie
   width: 70%
@@ -40,6 +41,7 @@
   @media(max-width: $bp-md-plas)
     width: 100%
 
+
   & > .logo
     font-size: 4.5rem
     color: lighten($mainColor,40%)
@@ -48,7 +50,7 @@
   & > .hide
       font-size: 2rem
       color: lighten($mainColor,40%)
-      grid-column: -1 / span 1
+      grid-column: 5 / span 1
       cursor: pointer
       transition: all .3s ease
 
@@ -67,6 +69,8 @@
     text-align: justify
     gap: 1rem
 
+
+
     & > p
       font-size: 1.2rem
       letter-spacing: 2px
@@ -78,7 +82,6 @@
         font-weight: 600
         cursor: pointer
 
-
   & > button
     width: 40%
     font-size: 1.2rem
@@ -86,6 +89,8 @@
     border: none
     cursor: pointer
     font-weight: 600
+    @media(max-width: $bp-md-plas)
+      margin-bottom: 1rem
 
   & > .accept
     grid-column: 2 / span 1
