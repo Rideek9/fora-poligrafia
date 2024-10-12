@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MediaService } from '../../service/media.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,9 @@ export class HeaderComponent {
   textSlider = [
     {
       first: 'Ożywiamy twoją wizję',
-      second: 'Kompleksowo zbudujemy twój wizerunek',
+      second: 'Kompleksowo zbudujemy wizerunek Twojej firmy',
     },
   ];
+
+  constructor(public media: MediaService) {}
 }
