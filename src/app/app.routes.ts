@@ -1,4 +1,4 @@
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { PolitycComponent } from './pages/polityc/polityc.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
