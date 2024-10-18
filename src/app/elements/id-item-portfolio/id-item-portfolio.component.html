@@ -1,0 +1,37 @@
+<div class="wrapperComponentItem">
+  <i (click)="goBack()" class="fa-solid fa-minimize goBack"></i>
+  <div class="photoSection">
+    @for (item of dataItem.imagesProduct; track $index) {
+      <div
+        (click)="changeIndex($index)"
+        [style.background-image]="'url(https://' + APIAddress + item.url + ')'"
+        class="imageElement {{
+          activeIndexElement === $index ? 'bigPhoto' : ''
+        }} {{ dataItem.imagesProduct.length === 1 ? 'onlyOne' : '' }} "
+      ></div>
+    }
+  </div>
+  <div class="descriptionSection">
+    <h4>{{ dataItem?.CompanyName }}</h4>
+    <div class="descriptionObject">
+      <p class="descriptionObject__info">
+        kategoria usługi:
+        <span>{{ dataItem?.sectionName }}</span>
+      </p>
+      <p class="descriptionObject__info">
+        rodzaj usługi:
+        <span>{{ dataItem?.productCreated }}</span>
+      </p>
+      <div class="descriptionCon">
+        <h4>Dodatkowe informacje</h4>
+        <div [innerHTML]="markDonwElement" class="contentElement"></div>
+      </div>
+    </div>
+    <div
+      [style.mask-image]="
+        'url(https://' + APIAddress + dataItem.logoCompany?.url + ')'
+      "
+      class="logoCompany"
+    ></div>
+  </div>
+</div>

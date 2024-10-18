@@ -1,0 +1,23 @@
+<div class="itemWrapper">
+  <div
+    [style.background-image]="
+      'url(https://' + serwerPath + data.mainPhoto.url + ')'
+    "
+    class="elementImage"
+  >
+    <i
+      (click)="activElement(data.documentId)"
+      class="fa-solid fa-circle-info moreInfo"
+      routerLink="/portfolio/{{ data.documentId }}"
+    ></i>
+
+    <div class="logoWrapper">
+      <div
+        [style.mask-image]="
+          'url(https://' + serwerPath + data.logoCompany.url + ')'
+        "
+        class="logoImage"
+      ></div>
+    </div>
+  </div>
+</div>
