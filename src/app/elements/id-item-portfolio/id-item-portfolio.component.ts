@@ -39,6 +39,12 @@ export class IdItemPortfolioComponent implements OnInit {
         this.markDonwElement = this.markDownToHtml(data.data.description);
         document.body.style.overflow = 'hidden';
         this.meta.getTitle(`Fora Poligrafia - ${this.dataItem.CompanyName}`);
+        if (this.dataItem.metaDescription) {
+          this.meta.getDescription(this.dataItem.metaDescription);
+        }
+        if (this.dataItem.metaKeywords) {
+          this.meta.getKeywords(this.dataItem.metaKeywords);
+        }
       },
       (error: any) => {
         this.router.navigate(['/portfolio']);
@@ -47,7 +53,7 @@ export class IdItemPortfolioComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    location.href = '/portfolio';
     document.body.style.overflow = 'scroll';
   }
 

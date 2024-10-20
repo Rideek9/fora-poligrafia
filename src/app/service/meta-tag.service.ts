@@ -20,7 +20,12 @@ export class MetaTagService {
 
   getDescription(desc: string): void {
     this.router.data.subscribe((data) => {
-      this.meta.updateTag({ descritpion: desc });
+      this.meta.updateTag({ name: 'description', content: desc });
+    });
+  }
+  getKeywords(keyword: string): void {
+    this.router.data.subscribe((data) => {
+      this.meta.updateTag({ name: 'keywords', content: keyword });
     });
   }
 }
