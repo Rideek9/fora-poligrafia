@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PrivatePoliticComponent } from '../../elements/private-politic/private-politic.component';
+import { MetaTagService } from '../../service/meta-tag.service';
 
 @Component({
   selector: 'app-polityc',
@@ -8,4 +9,10 @@ import { PrivatePoliticComponent } from '../../elements/private-politic/private-
   templateUrl: './polityc.component.html',
   styleUrl: './polityc.component.sass',
 })
-export class PolitycComponent {}
+export class PolitycComponent implements OnInit {
+  constructor(private meta: MetaTagService) {}
+
+  ngOnInit() {
+    this.meta.getTitle('Fora Poligrafia - polityka prywatności');
+  }
+}

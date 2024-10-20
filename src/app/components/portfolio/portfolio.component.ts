@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PortoflioService } from '../../service/portoflio.service';
-import { log } from '@angular-devkit/build-angular/src/builders/ssr-dev-server';
 import { PortfolioItemComponent } from '../../elements/portfolio-item/portfolio-item.component';
 
 @Component({
@@ -14,7 +13,6 @@ export class PortfolioComponent implements OnInit {
   element: any;
   SectionElement: [] = [];
   activeSection: string = '';
-  FilterElement: [] = [];
 
   constructor(private data: PortoflioService) {}
 
@@ -40,12 +38,7 @@ export class PortfolioComponent implements OnInit {
       });
   }
 
-  filterElement(element: string) {
-    // this.SectionElement.filter((item) => element === it);
-  }
-
   changeSection(section: string) {
-    console.log(this.element);
     if (this.activeSection !== section) {
       this.activeSection = section;
       return;

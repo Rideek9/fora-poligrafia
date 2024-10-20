@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PortoflioService } from '../../service/portoflio.service';
+import { MetaTagService } from '../../service/meta-tag.service';
 
 @Component({
   selector: 'app-id-item-portfolio',
@@ -17,13 +18,13 @@ export class IdItemPortfolioComponent implements OnInit {
   APIAddress!: string;
   activeIndexElement: number = 0;
   markDonwElement: any;
-  markDownHTML: any;
 
   constructor(
     private location: Location,
     private route: ActivatedRoute,
     private itemDB: PortoflioService,
     private router: Router,
+    private meta: MetaTagService,
   ) {}
 
   ngOnInit() {
@@ -37,7 +38,7 @@ export class IdItemPortfolioComponent implements OnInit {
         this.dataItem = data.data;
         this.markDonwElement = this.markDownToHtml(data.data.description);
         document.body.style.overflow = 'hidden';
-        console.log(this.markDonwElement);
+        this.meta.getTitle(`Fora Poligrafia - ${this.dataItem.CompanyName}`);
       },
       (error: any) => {
         this.router.navigate(['/portfolio']);

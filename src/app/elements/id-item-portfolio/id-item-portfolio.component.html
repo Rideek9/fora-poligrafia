@@ -1,5 +1,6 @@
 <div class="wrapperComponentItem">
   <i (click)="goBack()" class="fa-solid fa-minimize goBack"></i>
+  <!--  Sekcja with photos -->
   <div class="photoSection">
     @for (item of dataItem.imagesProduct; track $index) {
       <div
@@ -11,6 +12,7 @@
       ></div>
     }
   </div>
+  <!--  Section with description-->
   <div class="descriptionSection">
     <h4>{{ dataItem?.CompanyName }}</h4>
     <div class="descriptionObject">
@@ -27,6 +29,7 @@
         <div [innerHTML]="markDonwElement" class="contentElement"></div>
       </div>
     </div>
+    <!--   Section with company logo-->
     <div
       [style.mask-image]="
         'url(https://' + APIAddress + dataItem.logoCompany?.url + ')'
