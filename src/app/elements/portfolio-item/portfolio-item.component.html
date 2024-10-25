@@ -1,7 +1,7 @@
 <div class="itemWrapper">
   <div
     [style.background-image]="
-      'url(https://' + serwerPath + data.mainPhoto.url + ')'
+      'url(https://' + serwerPath + data.mainPhoto?.url + ')'
     "
     class="elementImage"
   >
@@ -14,7 +14,7 @@
     <div class="logoWrapper">
       <div
         [style.mask-image]="
-          'url(https://' + serwerPath + data.logoCompany.url + ')'
+          'url(https://' + serwerPath + data.logoCompany?.url + ')'
         "
         class="logoImage"
       ></div>

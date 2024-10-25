@@ -62,6 +62,9 @@ export class IdItemPortfolioComponent implements OnInit {
   }
 
   markDownToHtml(markdown: string) {
+    if (markdown === null) {
+      return;
+    }
     markdown = markdown.replace(/^###### (.*$)/gim, '<h6>$1</h6>');
     markdown = markdown.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
     markdown = markdown.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
