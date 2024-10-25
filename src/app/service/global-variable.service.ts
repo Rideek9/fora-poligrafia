@@ -23,17 +23,22 @@ export class GlobalVariableService implements OnInit {
   navigation = [
     {
       name: 'o nas',
-      url: 'about',
+      url: '#about',
       active: true,
     },
     {
       name: 'specjalności',
       active: true,
-      url: 'expirence',
+      url: '#expirence',
     },
     {
       name: 'zaufali nam',
-      url: 'trust-us',
+      url: '#trust-us',
+      active: true,
+    },
+    {
+      name: 'portfolio',
+      url: '/portfolio',
       active: true,
     },
   ];

@@ -11,7 +11,7 @@
   <div [style.mask-image]="'url(/image/logoFora.svg)'" class="logoFora"></div>
   <div class="elementNav">
     @for (item of navigation; track item.name) {
-      <a (click)="openNavigation()" href="#{{ item.url }}">{{ item.name }}</a>
+      <a (click)="openNavigation()" href="{{ item.url }}">{{ item.name }}</a>
     }
   </div>
   <i
